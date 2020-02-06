@@ -20,7 +20,7 @@ defmodule Ledger.MixProject do
   def application do
     [
       mod: {Ledger.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :eventstore]
     ]
   end
 
@@ -40,7 +40,10 @@ defmodule Ledger.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      ## Custom
+      {:commanded, "~> 1.0"},
+      {:commanded_eventstore_adapter, "~> 1.0"},
     ]
   end
 
