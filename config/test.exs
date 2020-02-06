@@ -4,7 +4,7 @@ use Mix.Config
 config :ledger, Ledger.Repo,
   username: "postgres",
   password: "postgres",
-  database: "ledger_test",
+  database: "ledger_readstore_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
