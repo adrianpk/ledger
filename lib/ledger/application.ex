@@ -3,7 +3,14 @@ defmodule Ledger.Application do
   # for more information on OTP Applications
   @moduledoc false
 
-  use Application
+  # use Application
+
+  use Commanded.Application,
+    otp_app: :ledger,
+    event_store: [
+      adapter: Commanded.EventStore.Adapters.EventStore,
+      event_store: Ledger.EventStore
+    ]
 
   def start(_type, _args) do
     # List all child processes to be supervised
