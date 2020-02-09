@@ -46,7 +46,8 @@ defmodule Ledger.MixProject do
       {:commanded_eventstore_adapter, "~> 1.0"},
       {:poison, "~> 3.1"},
       {:exconstructor, "~> 1.1"},
-      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false}
+      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
+      {:ex_machina, "~> 2.3", only: :test}
     ]
   end
 
