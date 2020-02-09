@@ -32,7 +32,38 @@ defmodule Ledger.DataCase do
       Ecto.Adapters.SQL.Sandbox.mode(Ledger.Repo, {:shared, self()})
     end
 
+    Application.stop(:ledger)
+    Application.stop(:commanded)
+    Application.stop(:eventstore)
+    reset_eventstore()
+    reset_readstore()
+    Application.ensure_all_started(:ledger)
+
     :ok
+  end
+
+  defp reset_eventstore do
+    {:ok, conn} =
+      EventStore.configuration()
+      |> EventStore.Config.parse()
+      |> Postgrex.start_link()
+
+    EventStore.Storage.Initializer.reset!(conn)
+  end
+
+  defp reset_readstore do
+    readstore_config = Application.get_env(:conduit, Conduit.Repo)
+    {:ok, conn} = Postgrex.start_link(readstore_config)
+    Postgrex.query!(conn, truncate_readstore_tables(), [])
+  end
+
+  defp truncate_readstore_tables do
+    """
+    TRUNCATE TABLE
+    warehouse_tracking_statuses,
+    projection_versions
+    RESTART IDENTITY;
+    """
   end
 
   @doc """
