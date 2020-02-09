@@ -28,6 +28,9 @@ config :phoenix, :json_library, Jason
 # Event store configuration
 config :ledger, event_stores: [Ledger.EventStore]
 
+# Projections
+config :commanded_ecto_projections, repo: Ledger.Repo
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
