@@ -23,7 +23,7 @@ defmodule Ledger.Application do
       # {Ledger.Worker, arg},
 
       # Warehouse supervisor
-      Ledger.Warehouse.Supervisor,
+      Ledger.Warehouse.Supervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
