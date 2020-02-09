@@ -1,4 +1,3 @@
-# test/support/aggregate_case.ex
 defmodule Ledger.AggregateCase do
   @moduledoc """
   Test case to be used by aggregate tests.
