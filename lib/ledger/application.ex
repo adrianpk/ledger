@@ -18,9 +18,12 @@ defmodule Ledger.Application do
       # Start the Ecto repository
       Ledger.Repo,
       # Start the endpoint when the application starts
-      LedgerWeb.Endpoint
+      LedgerWeb.Endpoint,
       # Starts a worker by calling: Ledger.Worker.start_link(arg)
       # {Ledger.Worker, arg},
+
+      # Warehouse supervisor
+      Ledger.Warehouse.Supervisor,
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
