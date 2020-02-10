@@ -1,6 +1,8 @@
 defmodule Ledger.Factory do
   use ExMachina
 
+  alias Ledger.Warehouse.Commands.ReceiveFromTransport
+
   @uuid1 "f8e2702b-783e-40bf-9df8-3aaae36a599c"
   def package_uuid, do: @uuid1
   @uuid2 "e2f63c25-e582-4da5-ad73-2fcdf604fc05"
@@ -18,7 +20,7 @@ defmodule Ledger.Factory do
   @tags1 "tagA, tagB, tagsC"
   def reception_tags, do: @tags1
 
-  def tracking_factory do
+  def receive_from_transport_factory do
     %{
       package_id: package_uuid(),
       vehicle_id: vehicle_uuid(),

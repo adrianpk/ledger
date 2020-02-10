@@ -1,15 +1,14 @@
-defmodule Warehouse.Supervisor do
+defmodule Ledger.Warehouse.Supervisor do
   use Supervisor
-  alias Ledger.Warehouse
 
-  def start_link do
-    Supervisor.start_link(__MODULE__, [], name: __MODULE__)
+  def start_link(arg) do
+    Supervisor.start_link(__MODULE__, arg, name: __MODULE__)
   end
 
   def init(_arg) do
     Supervisor.init(
       [
-        Warehouse.Projectors.TrackingStatus
+        Ledger.Warehouse.Projectors.TrackingStatus
       ],
       strategy: :one_for_one
     )
