@@ -3,25 +3,30 @@ defmodule Ledger.Application do
   # for more information on OTP Applications
   @moduledoc false
 
-  # use Application
+  use Application
+  # def start(_type, _args) do
+  #   import Supervisor.Spec
 
-  use Commanded.Application,
-    otp_app: :ledger,
-    event_store: [
-      adapter: Commanded.EventStore.Adapters.EventStore,
-      event_store: Ledger.EventStore
-    ]
+  #   children = [
+  #     supervisor(Ledger.Repo, []),
+  #     supervisor(Ledger.Warehouse.Supervisor, [])
+  #   ]
+
+  #   opts = [strategy: :one_for_one, name: Ledger.Supervisor]
+  #   Supervisor.start_link(children, opts)
+  # end
+
 
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
+      Ledger.App,
       # Start the Ecto repository
       Ledger.Repo,
       # Start the endpoint when the application starts
       LedgerWeb.Endpoint,
       # Starts a worker by calling: Ledger.Worker.start_link(arg)
       # {Ledger.Worker, arg},
-
       # Warehouse supervisor
       Ledger.Warehouse.Supervisor
     ]

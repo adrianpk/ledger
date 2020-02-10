@@ -4,6 +4,7 @@ defmodule Ledger.Warehouse do
   """
   alias Ledger.Warehouse.Commands.ReceiveFromTransport
   alias Ledger.Warehouse.Projections.TrackingStatus
+  alias Ledger.App
   alias Ledger.Repo
   alias Ledger.Router
 
@@ -18,7 +19,7 @@ defmodule Ledger.Warehouse do
       |> assign_uuid(:tracking_uuid)
       |> ReceiveFromTransport.new()
 
-    with :ok <- Router.dispatch(receive_from_transport, consistency: :strong) do
+    with :ok <- App.dispatch(receive_from_transport, consistency: :strong) do
       get(TrackingStatus, uuid)
     else
       reply -> reply

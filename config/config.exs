@@ -7,8 +7,18 @@
 # General application configuration
 use Mix.Config
 
+# General application configuration
 config :ledger,
-  ecto_repos: [Ledger.Repo]
+  ecto_repos: [Ledger.Repo],
+  event_stores: [Ledger.EventStore]
+
+config :ledger, Ledger.App,
+  event_store: [
+    adapter: Commanded.EventStore.Adapters.EventStore,
+    event_store: Ledger.EventStore
+  ],
+  pub_sub: :local,
+  registry: :local
 
 # Configures the endpoint
 config :ledger, LedgerWeb.Endpoint,

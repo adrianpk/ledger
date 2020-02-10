@@ -1,8 +1,7 @@
-defmodule Conduit.Warehouse.Projectors.TrackingStatus do
+defmodule Ledger.Warehouse.Projectors.TrackingStatus do
   use Commanded.Projections.Ecto,
-    application: Ledger.Warehouse,
-    name: "Warehouse.Projectors.TrackingStatus",
-    consistency: :strong
+    application: Ledger.App,
+    name: "Warehouse.Projectors.TrackingStatus"
 
   alias Ledger.Warehouse.Events.ReceivedFromTransport
   alias Ledger.Warehouse.Projections.TrackingStatus

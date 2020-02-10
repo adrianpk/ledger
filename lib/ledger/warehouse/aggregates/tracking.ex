@@ -35,12 +35,12 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
   """
   def execute(%Tracking{uuid: nil}, %ReceiveFromTransport{} = to_receive) do
     %Tracking{
-      package_uuid: to_receive.package.uuid,
+      package_uuid: to_receive.package_uuid,
       vehicle_uuid: to_receive.vehicle_uuid,
       driver_uuid: to_receive.driver_uuid,
       warehouse_uuid: to_receive.warehouse_uuid,
       gate_uuid: to_receive.gate_uuid,
-      operator_uuid: to_receive.operato_uuid,
+      operator_uuid: to_receive.operator_uuid,
       notes: to_receive.notes,
       tags: to_receive.tags
     }
@@ -56,7 +56,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
         driver_uuid: received.driver_uuid,
         warehouse_uuid: received.warehouse_uuid,
         gate_uuid: received.gate_uuid,
-        operator_uuid: received.operato_uuid,
+        operator_uuid: received.operator_uuid,
         notes: received.notes,
         tags: received.tags
     }

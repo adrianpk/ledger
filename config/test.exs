@@ -2,8 +2,8 @@ use Mix.Config
 
 # Configure your database
 config :ledger, Ledger.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "ledger",
+  password: "ledger",
   database: "ledger_readstore_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
@@ -11,7 +11,7 @@ config :ledger, Ledger.Repo,
 # Configure the event store database
 config :ledger, Ledger.EventStore,
   serializer: Commanded.Serialization.JsonSerializer,
-  types: EventStore.PostgresTypes,
+  # types: EventStore.PostgresTypes,
   username: "ledger",
   password: "ledger",
   database: "ledger_eventstore_test",
