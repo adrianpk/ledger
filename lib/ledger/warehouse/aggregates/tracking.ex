@@ -1,20 +1,14 @@
 defmodule Ledger.Warehouse.Aggregates.Tracking do
-  defstruct [
-    :uuid,
-    :package_uuid,
-    :vehicle_uuid,
-    :driver_uuid,
-    :warehouse_uuid,
-    :gate_uuid,
-    :operator_uuid,
-    :notes,
-    :tags
-  ]
+  defstruct uuid: nil,
+            package_uuid: nil,
+            vehicle_uuid: nil,
+            driver_uuid: nil,
+            warehouse_uuid: nil,
+            gate_uuid: nil,
+            operator_uuid: nil,
+            notes: nil,
+            tags: nil
 
-  @typedoc """
-  Tracking aggregate field types.
-  At the moment I asume that the loading process of vehicle, driver, gate, etc is automated through fixed credentials, sensor or terminal signatures (NFC, QR codes, biometric data, etc.)
-  """
   @type t :: %__MODULE__{
           uuid: UUID.t(),
           package_uuid: UUID.t() | nil,
@@ -33,8 +27,10 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
   @doc """
   Receive from transport.
   """
+  # def execute(%Tracking{uuid: nil}, %ReceiveFromTransport{} = to_receive) do
   def execute(%Tracking{uuid: nil}, %ReceiveFromTransport{} = to_receive) do
-    %Tracking{
+    %ReceivedFromTransport{
+      tracking_uuid: to_receive.tracking_uuid,
       package_uuid: to_receive.package_uuid,
       vehicle_uuid: to_receive.vehicle_uuid,
       driver_uuid: to_receive.driver_uuid,
@@ -51,7 +47,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
     %Tracking{
       tracking
       | uuid: received.tracking_uuid,
-        package_uuid: received.package.uuid,
+        package_uuid: received.package_uuid,
         vehicle_uuid: received.vehicle_uuid,
         driver_uuid: received.driver_uuid,
         warehouse_uuid: received.warehouse_uuid,
@@ -60,5 +56,12 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
         notes: received.notes,
         tags: received.tags
     }
+  end
+
+  @doc """
+  Assign a unique identity for the user
+  """
+  def assign_uuid(%ReceiveFromTransport{} = receive_from_transport, uuid) do
+    %ReceiveFromTransport{receive_from_transport | tracking_uuid: uuid}
   end
 end

@@ -1,7 +1,8 @@
 defmodule Ledger.Warehouse.Projectors.TrackingStatus do
   use Commanded.Projections.Ecto,
     application: Ledger.App,
-    name: "Warehouse.Projectors.TrackingStatus"
+    name: "Ledger.Warehouse.Projectors.TrackingStatus",
+    consistency: :strong
 
   alias Ledger.Warehouse.Events.ReceivedFromTransport
   alias Ledger.Warehouse.Projections.TrackingStatus
@@ -14,6 +15,7 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
       driver_uuid: received.driver_uuid,
       warehouse_uuid: received.warehouse_uuid,
       gate_uuid: received.gate_uuid,
+      operator_uuid: received.operator_uuid,
       notes: received.notes,
       tags: received.tags
     })

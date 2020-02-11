@@ -6,7 +6,6 @@ defmodule Ledger.Warehouse do
   alias Ledger.Warehouse.Projections.TrackingStatus
   alias Ledger.App
   alias Ledger.Repo
-  alias Ledger.Router
 
   @doc """
   Receive from transport.
@@ -16,8 +15,8 @@ defmodule Ledger.Warehouse do
 
     receive_from_transport =
       attrs
-      |> assign_uuid(:tracking_uuid)
       |> ReceiveFromTransport.new()
+      |> ReceiveFromTransport.assign_uuid(uuid)
 
     with :ok <- App.dispatch(receive_from_transport, consistency: :strong) do
       get(TrackingStatus, uuid)
@@ -32,7 +31,4 @@ defmodule Ledger.Warehouse do
       projection -> {:ok, projection}
     end
   end
-
-  # generate a unique identity
-  defp assign_uuid(attrs, identity), do: Map.put(attrs, identity, UUID.uuid4())
 end

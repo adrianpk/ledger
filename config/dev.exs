@@ -12,7 +12,7 @@ config :ledger, Ledger.Repo,
 # Configure the event store database
 config :ledger, Ledger.EventStore,
   serializer: Commanded.Serialization.JsonSerializer,
-  # types: EventStore.PostgresTypes,
+  types: EventStore.PostgresTypes,
   username: "ledger",
   password: "ledger",
   database: "ledger_eventstore_dev",

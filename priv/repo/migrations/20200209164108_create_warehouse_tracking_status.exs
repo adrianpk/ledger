@@ -2,9 +2,9 @@ defmodule Ledger.Repo.Migrations.CreateWarehouseTrackingStatus do
   use Ecto.Migration
 
   def change do
-    create table(:warehouse_tracking_status) do
-      add :uuid, :uuid
-      add :pallet_uuid, :string
+    create table(:warehouse_tracking_status, primary_key: false) do
+      add :uuid, :uuid, primary_key: true
+      add :pallet_uuid, :uuid
       add :package_uuid, :uuid
       add :vehicle_uuid, :uuid
       add :driver_uuid, :uuid

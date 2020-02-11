@@ -16,7 +16,11 @@ config :ledger, Ledger.EventStore,
   password: "ledger",
   database: "ledger_eventstore_test",
   hostname: "localhost",
-  pool_size: 10
+  pool_size: 10,
+  pool: Ecto.Adapters.SQL.Sandbox,
+  pool_timeout: 120_000,
+  timeout: 120_000,
+  ownership_timeout: 120_000
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.

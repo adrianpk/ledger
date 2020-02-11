@@ -3,5 +3,14 @@ defmodule Ledger.Router do
   alias Ledger.Warehouse.Commands.ReceiveFromTransport
   alias Ledger.Warehouse.Aggregates.Tracking
 
-  dispatch([ReceiveFromTransport], to: Tracking, identity: :tracking_uuid)
+  # dispatch [
+  #   ReceiveFromTransport
+  # ], to: Tracking
+
+  dispatch(ReceiveFromTransport,
+    to: Tracking,
+    identity: :tracking_uuid,
+    # identity_prefix: "tracking-",
+    consistency: :strong
+  )
 end
