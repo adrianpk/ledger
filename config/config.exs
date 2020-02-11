@@ -7,8 +7,18 @@
 # General application configuration
 use Mix.Config
 
+# General application configuration
 config :ledger,
-  ecto_repos: [Ledger.Repo]
+  ecto_repos: [Ledger.Repo],
+  event_stores: [Ledger.EventStore]
+
+config :ledger, Ledger.App,
+  event_store: [
+    adapter: Commanded.EventStore.Adapters.EventStore,
+    event_store: Ledger.EventStore
+  ],
+  pub_sub: :local,
+  registry: :local
 
 # Configures the endpoint
 config :ledger, LedgerWeb.Endpoint,
@@ -24,6 +34,12 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+# Event store configuration
+config :ledger, event_stores: [Ledger.EventStore]
+
+# Projections
+config :commanded_ecto_projections, repo: Ledger.Repo
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

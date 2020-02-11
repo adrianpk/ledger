@@ -1,0 +1,12 @@
+# Tests
+
+test-selected:
+	clear
+	@make spacer
+	make -f makefile.test test-warehouse
+
+## Warehouse
+
+test-warehouse:
+	clear
+	mix test ./test/ledger/warehouse/warehouse_test.exs
