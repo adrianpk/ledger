@@ -20,7 +20,7 @@ defmodule Ledger.MixProject do
   def application do
     [
       mod: {Ledger.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :eventstore]
     ]
   end
 
@@ -40,7 +40,15 @@ defmodule Ledger.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      ## Custom
+      {:commanded, "~> 1.0"},
+      {:commanded_eventstore_adapter, "~> 1.0"},
+      {:commanded_ecto_projections, "~> 1.0"},
+      {:poison, "~> 3.1"},
+      {:exconstructor, "~> 1.1"},
+      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
+      {:ex_machina, "~> 2.3", only: :test}
     ]
   end
 
@@ -52,9 +60,10 @@ defmodule Ledger.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
+      "event_store.init": ["event_store.drop", "event_store.create", "event_store.init"],
+      "ecto.init": ["ecto.drop", "ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
+      reset: ["event_store.init", "ecto.init"],
+      test: ["reset", "test"]
     ]
   end
 end

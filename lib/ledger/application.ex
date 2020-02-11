@@ -4,16 +4,30 @@ defmodule Ledger.Application do
   @moduledoc false
 
   use Application
+  # def start(_type, _args) do
+  #   import Supervisor.Spec
+
+  #   children = [
+  #     supervisor(Ledger.Repo, []),
+  #     supervisor(Ledger.Warehouse.Supervisor, [])
+  #   ]
+
+  #   opts = [strategy: :one_for_one, name: Ledger.Supervisor]
+  #   Supervisor.start_link(children, opts)
+  # end
 
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
+      Ledger.App,
       # Start the Ecto repository
       Ledger.Repo,
       # Start the endpoint when the application starts
-      LedgerWeb.Endpoint
+      LedgerWeb.Endpoint,
       # Starts a worker by calling: Ledger.Worker.start_link(arg)
       # {Ledger.Worker, arg},
+      # Warehouse supervisor
+      Ledger.Warehouse.Supervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
