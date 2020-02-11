@@ -1,19 +1,33 @@
 # Ledger
 
-To start your Phoenix server:
+## Commands
+This is a proof of concept, UUIDs has been chosen as standard identifier to simplify the implementation
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server`
+UUIDs can be easily generated offline and be unique across applications. However, it would be trivial to modify the system to accept another format of values for each required identifiers. (Topaz/Jewel, Mifare, FeliCa, ISO14443-4A, ISO14443-4B or just only a simple string).
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+At the moment I asume that the loading process of vehicle, driver, gate, etc is automated through fixed credentials, sensor or terminal signatures (NFC, QR codes, biometric data, etc.)
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+### Warehouse -> Cloud
+**ReceiveFromTransport**
 
-## Learn more
+```json
+{
+  "payload": {
+    "command": "receive-from-transport",
+    "payload": {
+        "warehouseUUID": "e682bb16-5738-46c6-abbd-33575b5379a0",
+        "gateUUID": "cb650975-0f77-47bd-ba86-44352bc1649a",
+        "operatorUUID": "d61b3b98-643e-4e80-a621-802f5cfb636b",
+        "vehicleUUID": "9f1ba2b5-91a5-4907-8403-e94a1f8b1bd8",
+        "driverUUID": "2befab04-9971-4351-a8d4-14e62da96e80",
+        "palletExtID": "some-ext-code",
+        "packageExtID": "some-ext-code",
+        "packageUUID": "7cdf9aa6-4816-41d2-9773-4894146fbec1",
+        "notes": "Sample note",
+        "tags": "tag1, tags2, tag3"
+    }
+  }
+}
+```
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+### Warehouse -> Cloud
