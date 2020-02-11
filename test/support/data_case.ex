@@ -14,8 +14,19 @@ defmodule Ledger.DataCase do
     end
   end
 
-  setup do
+  setup tags do
     Ledger.Storage.reset!()
     :ok
   end
+
+  # setup tags do
+  #   :ok = Ecto.Adapters.SQL.Sandbox.checkout(Ledger.Repo)
+
+  #   unless tags[:async] do
+  #     Ecto.Adapters.SQL.Sandbox.mode(Ledger.Repo, {:shared, self()})
+  #   end
+
+  #   # {:ok, conn: Phoenix.ConnTest.build_conn()}
+  #   :ok
+  # end
 end

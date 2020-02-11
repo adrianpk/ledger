@@ -16,7 +16,6 @@ defmodule Ledger.Application do
   #   Supervisor.start_link(children, opts)
   # end
 
-
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [

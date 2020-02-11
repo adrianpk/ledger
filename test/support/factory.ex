@@ -3,7 +3,9 @@ defmodule Ledger.Factory do
 
   alias Ledger.Warehouse.Commands.ReceiveFromTransport
 
-  @uuid1 "f8e2702b-783e-40bf-9df8-3aaae36a599c"
+  # @uuid1 UUID.info("f8e2702b-783e-40bf-9df8-3aaae36a599c")
+  # @uuid1 "f8e2702b-783e-40bf-9df8-3aaae36a599c"
+  @uuid1 UUID.uuid4()
   def package_uuid, do: @uuid1
   @uuid2 "e2f63c25-e582-4da5-ad73-2fcdf604fc05"
   def vehicle_uuid, do: @uuid2
@@ -22,12 +24,12 @@ defmodule Ledger.Factory do
 
   def receive_from_transport_factory do
     %{
-      package_id: package_uuid(),
-      vehicle_id: vehicle_uuid(),
-      driver_id: driver_uuid(),
-      warehouse_id: warehouse_uuid(),
-      gate_id: gate_uuid(),
-      operator_id: operator_uuid(),
+      package_uuid: package_uuid(),
+      vehicle_uuid: vehicle_uuid(),
+      driver_uuid: driver_uuid(),
+      warehouse_uuid: warehouse_uuid(),
+      gate_uuid: gate_uuid(),
+      operator_uuid: operator_uuid(),
       notes: reception_notes(),
       tags: reception_tags()
     }
