@@ -46,7 +46,7 @@ At the moment I asume that the loading process of vehicle, driver, gate, etc is 
       "widthCm": "80",
       "heightCm": "40",
       "weightGm": "40",
-      "pictureFront": "data:image/png;base64,iVBORw0KG...II=",
+      "picture_front": "data:image/png;base64,iVBORw0KG...II=",
       "picture_back": "data:image/png;base64,iVBORw0KG...II=",
       "picture_side_left": "data:image/png;base64,iVBORw0KG...II=",
       "picture_side_right": "data:image/png;base64,iVBORw0KG...II=",
