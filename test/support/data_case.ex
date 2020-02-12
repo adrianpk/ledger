@@ -15,7 +15,7 @@ defmodule Ledger.DataCase do
   end
 
   setup tags do
-    Ledger.Storage.reset!()
+    Ledger.Store.reset!()
     :ok
   end
 
