@@ -20,6 +20,12 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
     field :package_uuid, Ecto.UUID
     field :pallet_ext_id, :string
     field :pallet_uuid, Ecto.UUID
+    field :picture_back, :string
+    field :picture_front, :string
+    field :picture_side_left, :string
+    field :picture_side_right, :string
+    field :picture_top, :string
+    field :position, :string
     field :rack, :string
     field :repackaged, :boolean, default: false
     field :shelf_color, :string
@@ -59,6 +65,12 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
       :value_added_notes,
       :pallet_ext_id,
       :package_ext_id,
+      :picture_back,
+      :picture_front,
+      :picture_side_left,
+      :picture_side_right,
+      :picture_top,
+      :position,
       :operator_uuid,
       :note,
       :tags

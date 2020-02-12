@@ -1,4 +1,4 @@
-defmodule Ledger.Storage do
+defmodule Ledger.Store do
   @doc """
   Reset the event store and read store databases.
   """
@@ -17,7 +17,7 @@ defmodule Ledger.Storage do
       |> EventStore.Config.default_postgrex_opts()
       |> Postgrex.start_link()
 
-    EventStore.Storage.Initializer.reset!(conn)
+    EventStore.Store.Initializer.reset!(conn)
   end
 
   defp reset_readstore! do
