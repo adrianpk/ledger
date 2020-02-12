@@ -8,7 +8,7 @@ UUIDs can be easily generated offline and be unique across applications. However
 
 At the moment I asume that the loading process of vehicle, driver, gate, etc is automated through fixed credentials, sensor or terminal signatures (NFC, QR codes, biometric data, etc.)
 
-### Warehouse → Cloud
+### Warehouse ᐅ Cloud
 
 **ReceiveFromTransport**
 
@@ -24,7 +24,6 @@ At the moment I asume that the loading process of vehicle, driver, gate, etc is 
       "driverUUID": "2befab04-9971-4351-a8d4-14e62da96e80",
       "palletExtID": "some-ext-code",
       "packageExtID": "some-ext-code",
-      "packageUUID": "7cdf9aa6-4816-41d2-9773-4894146fbec1",
       "notes": "Sample note",
       "tags": "tag1, tags2, tag3"
     }
@@ -32,28 +31,48 @@ At the moment I asume that the loading process of vehicle, driver, gate, etc is 
 }
 ```
 
-**RelocateToStorage**
+**ClassifyItem**
 
 ```json
 {
   "payload": {
-    "command": "relocate-to-storage",
+    "command": "classify-item",
     "payload": {
       "trackingUUID": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
       "operatorUUID": "d61b3b98-643e-4e80-a621-802f5cfb636b",
-      "palletUUID": "00c4a891-b196-4af7-9f38-6192aa4cad97",
-      "packageUUID": "7cdf9aa6-4816-41d2-9773-4894146fbec1",
+      "palletUUID": "7cdf9aa6-4816-41d2-9773-4894146fbec1",
+      "packageUUID": "f577bfd3-b6f3-43da-8c1b-a24d97c2246d",
+      "lengthCm": "50",
+      "widthCm": "80",
+      "heightCm": "40",
+      "weightGm": "40",
+      "pictureFront": "data:image/png;base64,iVBORw0KG...II=",
+      "picture_back": "data:image/png;base64,iVBORw0KG...II=",
+      "picture_side_left": "data:image/png;base64,iVBORw0KG...II=",
+      "picture_side_right": "data:image/png;base64,iVBORw0KG...II=",
+      "picture_top": "data:image/png;base64,iVBORw0KG...II=",
+      "heightCm": "40",
+      "notes": "Sample note",
+      "tags": "tag1, tags2, tag3"
+    }
+  }
+}
+```
+
+**RelocateInStore**
+
+```json
+{
+  "payload": {
+    "command": "relocate-to-store",
+    "payload": {
+      "trackingUUID": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
+      "operatorUUID": "d61b3b98-643e-4e80-a621-802f5cfb636b",
       "shelfColor": "green",
       "rack": "A",
       "bay": "02",
       "level": "E",
       "position": "5",
-      "lengthCm": "50",
-      "widthCm": "80",
-      "heightCm": "40",
-      "heightCm": "40",
-      "isRepackaged": false,
-      "isDamaged": false,
       "notes": "Sample note",
       "tags": "tag1, tags2, tag3"
     }
@@ -61,4 +80,4 @@ At the moment I asume that the loading process of vehicle, driver, gate, etc is 
 }
 ```
 
-### Warehouse → Cloud
+### Warehouse ᐅ Cloud
