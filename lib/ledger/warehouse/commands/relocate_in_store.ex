@@ -25,6 +25,7 @@ defmodule Ledger.Warehouse.Commands.RelocateInStore do
           level: String.t() | nil,
           position: String.t() | nil,
           notes: String.t() | nil,
+          notes: String.t() | nil,
           tags: String.t() | nil
         }
 end

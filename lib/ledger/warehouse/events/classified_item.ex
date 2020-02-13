@@ -18,7 +18,8 @@ defmodule Ledger.Warehouse.Events.ClassifiedItem do
             is_repackaged: nil,
             is_damaged: nil,
             notes: nil,
-            tags: nil
+            tags: nil,
+            status: nil
 
   @typedoc """
   ClassifiedItem command field types.
@@ -42,6 +43,7 @@ defmodule Ledger.Warehouse.Events.ClassifiedItem do
           is_repackaged: Boolean.t() | nil,
           is_damaged: Boolean.t() | nil,
           notes: String.t() | nil,
-          tags: String.t() | nil
+          tags: String.t() | nil,
+          status: String.t() | nil
         }
 end

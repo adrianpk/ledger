@@ -29,6 +29,7 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
     field :position, :string
     field :rack, :string
     field :shelf_color, :string
+    field :status, :string
     field :tags, :string
     field :value_added_notes, :string
     field :vehicle_uuid, Ecto.UUID
@@ -72,6 +73,7 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
       :position,
       :operator_uuid,
       :note,
+      :status,
       :tags
     ])
 

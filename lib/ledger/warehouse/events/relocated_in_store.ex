@@ -9,7 +9,8 @@ defmodule Ledger.Warehouse.Events.RelocatedInStore do
             level: nil,
             position: nil,
             notes: nil,
-            tags: nil
+            tags: nil,
+            status: nil
 
   @typedoc """
   RelocatedInStore command field types.
@@ -25,6 +26,7 @@ defmodule Ledger.Warehouse.Events.RelocatedInStore do
           level: String.t() | nil,
           position: String.t() | nil,
           notes: String.t() | nil,
-          tags: String.t() | nil
+          tags: String.t() | nil,
+          status: String.t() | nil
         }
 end

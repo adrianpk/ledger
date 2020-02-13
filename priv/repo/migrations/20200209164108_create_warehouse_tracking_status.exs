@@ -34,6 +34,7 @@ defmodule Ledger.Repo.Migrations.CreateWarehouseTrackingStatus do
       add :operator_uuid, :uuid
       add :notes, :string
       add :tags, :string
+      add :status, :string
 
       timestamps()
     end

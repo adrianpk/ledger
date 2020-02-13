@@ -27,7 +27,8 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
       gate_uuid: event.gate_uuid,
       operator_uuid: event.operator_uuid,
       notes: event.notes,
-      tags: event.tags
+      tags: event.tags,
+      status: event.status
     })
   end
 
@@ -49,7 +50,8 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
       is_repackaged: event.is_repackaged,
       is_damaged: event.is_damaged,
       notes: event.notes,
-      tags: event.tags
+      tags: event.tags,
+      status: event.status
     )
   end)
 
@@ -63,7 +65,8 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
       level: event.level,
       position: event.position,
       notes: event.notes,
-      tags: event.tags
+      tags: event.tags,
+      status: event.status
     )
   end)
 
