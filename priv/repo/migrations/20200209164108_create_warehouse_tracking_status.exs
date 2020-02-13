@@ -12,22 +12,22 @@ defmodule Ledger.Repo.Migrations.CreateWarehouseTrackingStatus do
       add :gate_uuid, :uuid
       add :location_uuid, :uuid
       add :location_address_label, :string
+      add :is_damaged, :boolean, default: false, null: false
       add :is_repackaged, :boolean, default: false, null: false
       add :weight_gm, :integer
       add :length_cm, :integer
       add :width_cm, :integer
       add :height_cm, :integer
-      add :pictureFront, :string
+      add :picture_front, :string
       add :picture_top, :string
-      add :picture_side_left, :string
-      add :picture_side_right, :string
+      add :picture_left, :string
+      add :picture_right, :string
       add :picture_back, :string
       add :rack, :string
       add :shelf_color, :string
       add :bay, :string
       add :level, :string
       add :position, :string
-      add :is_damaged, :boolean, default: false, null: false
       add :value_added_notes, :string
       add :pallet_ext_id, :string
       add :package_ext_id, :string

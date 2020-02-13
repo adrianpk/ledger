@@ -5,6 +5,8 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
             driver_uuid: nil,
             pallet_ext_id: nil,
             package_ext_id: nil,
+            pallet_uuiid: nil,
+            package_uuid: nil,
             warehouse_uuid: nil,
             gate_uuid: nil,
             operator_uuid: nil,
@@ -20,8 +22,8 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
             weight_gm: nil,
             picture_front: nil,
             picture_back: nil,
-            picture_side_left: nil,
-            picture_side_right: nil,
+            picture_left: nil,
+            picture_right: nil,
             picture_top: nil,
             is_repackaged: nil,
             is_damaged: nil,
@@ -35,6 +37,8 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
           driver_uuid: UUID.t() | nil,
           pallet_ext_id: String.t() | nil,
           package_ext_id: String.t() | nil,
+          pallet_uuid: UUID.t() | nil,
+          package_uuid: UUID.t() | nil,
           warehouse_uuid: UUID.t() | nil,
           gate_uuid: UUID.t() | nil,
           operator_uuid: UUID.t() | nil,
@@ -51,8 +55,8 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
           picture_front: String.t() | nil,
           picture_back: String.t() | nil,
           picture_back: String.t() | nil,
-          picture_side_left: String.t() | nil,
-          picture_side_right: String.t() | nil,
+          picture_left: String.t() | nil,
+          picture_right: String.t() | nil,
           picture_top: String.t() | nil,
           is_repackaged: Boolean.t() | nil,
           is_damaged: Boolean.t() | nil,
@@ -96,10 +100,12 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
   @doc """
   Classify item.
   """
-  # def execute(%Tracking{uuid: nil}, %ClassifyItem{} = to_relocate) do
-  def execute(%Tracking{uuid: _uuid}, %ClassifyItem{} = to_classify) do
+  def execute(
+        %Tracking{uuid: tracking_uuid},
+        %ClassifyItem{tracking_uuid: tracking_uuid} = to_classify
+      ) do
     %ClassifiedItem{
-      tracking_uuid: to_classify.tracking_uuid,
+      tracking_uuid: tracking_uuid,
       operator_uuid: to_classify.operator_uuid,
       pallet_uuid: to_classify.pallet_uuid,
       package_uuid: to_classify.package_uuid,
@@ -109,8 +115,8 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       weight_gm: to_classify.weight_gm,
       picture_front: to_classify.picture_front,
       picture_back: to_classify.picture_back,
-      picture_side_left: to_classify.picture_side_left,
-      picture_side_right: to_classify.picture_side_right,
+      picture_left: to_classify.picture_left,
+      picture_right: to_classify.picture_right,
       picture_top: to_classify.picture_top,
       is_repackaged: to_classify.is_repackaged,
       is_damaged: to_classify.is_damaged,
@@ -145,7 +151,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
         vehicle_uuid: received.vehicle_uuid,
         driver_uuid: received.driver_uuid,
         pallet_ext_id: received.pallet_ext_id,
-        package_ext_id: received.package_ext_uuid,
+        package_ext_id: received.package_ext_id,
         warehouse_uuid: received.warehouse_uuid,
         gate_uuid: received.gate_uuid,
         operator_uuid: received.operator_uuid,
@@ -154,7 +160,38 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
     }
   end
 
-  def apply(%Tracking{} = tracking, %ClassifiedItem{} = classified) do
+
+  def apply(
+        %Tracking{} = tracking,
+        %ClassifiedItem{} = classified
+      ) do
+    %Tracking{
+      tracking
+      | uuid: classified.tracking_uuid,
+        pallet_uuid: classified.pallet_uuid,
+        package_uuid: classified.package_uuid,
+        operator_uuid: classified.operator_uuid,
+        length_cm: classified.length_cm,
+        width_cm: classified.width_cm,
+        height_cm: classified.height_cm,
+        weight_gm: classified.weight_gm,
+        picture_front: classified.picture_front,
+        picture_back: classified.picture_back,
+        picture_left: classified.picture_left,
+        picture_right: classified.picture_right,
+        picture_top: classified.picture_top,
+        is_repackaged: classified.is_repackaged,
+        is_damaged: classified.is_damaged,
+        notes: tracking.notes <> "\n" <> classified.notes,
+        tags: tracking.tags <> ", " <> classified.tags
+    }
+  end
+
+
+  def apply(
+        %Tracking{uuid: tracking_uuid} = tracking,
+        %ClassifiedItem{tracking_uuid: tracking_uuid} = classified
+      ) do
     %Tracking{
       tracking
       | pallet_uuid: classified.pallet_uuid,
@@ -166,17 +203,20 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
         weight_gm: classified.weight_gm,
         picture_front: classified.picture_front,
         picture_back: classified.picture_back,
-        picture_side_left: classified.picture_side_left,
-        picture_side_right: classified.picture_side_right,
+        picture_left: classified.picture_left,
+        picture_right: classified.picture_right,
         picture_top: classified.picture_top,
         is_repackaged: classified.is_repackaged,
         is_damaged: classified.is_damaged,
-        notes: classified.notes <> "\n" <> classified.notes,
-        tags: classified.tags <> ", " <> classified.tags
+        notes: tracking.notes <> "\n" <> classified.notes,
+        tags: tracking.tags <> ", " <> classified.tags
     }
   end
 
-  def apply(%Tracking{} = tracking, %RelocatedInStore{} = relocated) do
+  def apply(
+        %Tracking{uuid: tracking_uuid} = tracking,
+        %RelocatedInStore{tracking_uuid: tracking_uuid} = relocated
+      ) do
     %Tracking{
       tracking
       | operator_uuid: relocated.pallet_uuid,

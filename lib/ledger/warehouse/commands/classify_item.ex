@@ -1,6 +1,5 @@
 defmodule Ledger.Warehouse.Commands.ClassifyItem do
   defstruct tracking_uuid: nil,
-            package_uuid: nil,
             operator_uuid: nil,
             pallet_uuid: nil,
             package_uuid: nil,
@@ -10,8 +9,8 @@ defmodule Ledger.Warehouse.Commands.ClassifyItem do
             weight_gm: nil,
             picture_front: nil,
             picture_back: nil,
-            picture_side_left: nil,
-            picture_side_right: nil,
+            picture_left: nil,
+            picture_right: nil,
             picture_top: nil,
             is_repackaged: nil,
             is_damaged: nil,
@@ -27,7 +26,6 @@ defmodule Ledger.Warehouse.Commands.ClassifyItem do
 
   @type t :: %__MODULE__{
           tracking_uuid: UUID.t(),
-          package_uuid: UUID.t() | nil,
           operator_uuid: UUID.t() | nil,
           pallet_uuid: UUID.t() | nil,
           package_uuid: UUID.t() | nil,
@@ -37,8 +35,8 @@ defmodule Ledger.Warehouse.Commands.ClassifyItem do
           weight_gm: Integer.t() | nil,
           picture_front: String.t() | nil,
           picture_back: String.t() | nil,
-          picture_side_left: String.t() | nil,
-          picture_side_right: String.t() | nil,
+          picture_left: String.t() | nil,
+          picture_right: String.t() | nil,
           picture_top: String.t() | nil,
           is_repackaged: Boolean.t() | nil,
           is_damaged: Boolean.t() | nil,
