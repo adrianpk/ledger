@@ -12,7 +12,7 @@ defmodule Ledger.Repo.Migrations.CreateWarehouseTrackingStatus do
       add :gate_uuid, :uuid
       add :location, :string
       add :addressee, :string
-      add :shiping_address, :string
+      add :shipping_address, :string
       add :is_damaged, :boolean, default: false, null: false
       add :is_repackaged, :boolean, default: false, null: false
       add :weight_gm, :integer

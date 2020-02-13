@@ -13,8 +13,8 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
     field :is_repackaged, :boolean, default: false
     field :length_cm, :integer
     field :level, :string
-    field :shipment_address, :string
-    field :location_uuid, Ecto.UUID
+    field :location, :string
+    field :shipping_address, :string
     field :notes, :string
     field :operator_uuid, Ecto.UUID
     field :package_ext_id, :string
@@ -50,9 +50,9 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
       :driver_uuid,
       :warehouse_uuid,
       :gate,
-      :location_uuid,
-      :shipment_address,
+      :shipping_address,
       :weight_gm,
+      :location,
       :length_cm,
       :width_cm,
       :height_cm,
@@ -77,6 +77,6 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
       :tags
     ])
 
-    # |> validate_required([:uuid, :pallet_uuid, :package_uuid, :vehicle_uuid, :driver_uuid, :warehouse_uuid, :gate, :location_uuid, :shipment_address, :repackaged, :weight_gm, :length_cm, :width_cm, :height_cm, :rack, :shelf_color, :bay, :level, :is_damaged, :value_added_notes, :pallet_ext_id, :package_ext_id, :operator_uuid, :note, :tags])
+    # |> validate_required([:uuid, :pallet_uuid, :package_uuid, :vehicle_uuid, :driver_uuid, :warehouse_uuid, :gate, :shipping_address, :repackaged, :weight_gm, :length_cm, :width_cm, :height_cm, :rack, :shelf_color, :bay, :level, :is_damaged, :value_added_notes, :pallet_ext_id, :package_ext_id, :operator_uuid, :note, :tags])
   end
 end

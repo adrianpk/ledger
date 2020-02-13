@@ -20,6 +20,7 @@ defmodule Ledger.Warehouse.WarehouseTest do
       assert tracking.notes == reception_notes()
       assert tracking.tags == reception_tags()
       assert tracking.status == "received"
+      assert tracking.location == "in-gate"
     end
   end
 
@@ -50,6 +51,7 @@ defmodule Ledger.Warehouse.WarehouseTest do
       assert tracking.notes == classify_notes()
       assert tracking.tags == classify_tags()
       assert tracking.status == "classified"
+      assert tracking.location == "reception"
     end
   end
 
@@ -73,6 +75,7 @@ defmodule Ledger.Warehouse.WarehouseTest do
        assert tracking.notes == relocate_notes()
        assert tracking.tags == relocate_tags()
       assert tracking.status == "stored"
+      assert tracking.location == "store"
     end
   end
 

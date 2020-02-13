@@ -27,11 +27,12 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
             picture_top: nil,
             is_repackaged: nil,
             is_damaged: nil,
-            shipment_address: nil,
+            shipping_address: nil,
             notes: nil,
             location: nil,
             addressee: nil,
-            shipment_address: nil,
+            shipping_address: nil,
+            location: nil,
             status: nil,
             tags: nil
 
@@ -69,7 +70,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
           status: String.t() | nil,
           tags: String.t() | nil,
           addressee: String.t() | nil,
-          shipment_address: nil,
+          shipping_address: nil,
           notes: UUID.t() | nil
         }
 
@@ -77,7 +78,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
   @received_st "received"
   @classified_st "classified"
   @stored_st "stored"
-  @shipment_requested_st "shipment-requested"
+  @shipping_requested_st "shipping-requested"
   @dispatched_st "dispatched"
   # Location
   @ingate_loc "in-gate"
@@ -119,7 +120,8 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       operator_uuid: command.operator_uuid,
       notes: command.notes,
       tags: command.tags,
-      status: @ingate_loc,
+      status: @received_st,
+      location: @ingate_loc,
     }
   end
 
@@ -149,7 +151,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       notes: command.notes,
       tags: command.tags,
       status: @classified_st,
-      status: @reception_loc,
+      location: @reception_loc,
     }
   end
 
@@ -172,7 +174,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       notes: command.notes,
       tags: command.tags,
       status: @stored_st,
-      status: @store_loc,
+      location: @store_loc,
     }
   end
 
