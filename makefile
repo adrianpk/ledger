@@ -16,9 +16,9 @@ setdev:
 	DATABASE_URL="ecto://ledger:ledger@localhost/ledger_readstore_dev"
 	export DATABASE_URL;
 
-tests:
+test-ig:
 	DATABASE_URL="ecto://ledger:ledger@localhost/ledger_readstore_test"
-	export DATABASE_URL;
+	export DATABASE_URL;DATABASE_URL="ecto://ledger:ledger@localhost/ledger_readstore_test"
 	make -f makefile.test test-selected
 
 spacer:

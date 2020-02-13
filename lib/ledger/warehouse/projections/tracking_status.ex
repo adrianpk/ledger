@@ -10,6 +10,7 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
     field :gate_uuid, Ecto.UUID
     field :height_cm, :integer
     field :is_damaged, :boolean, default: false
+    field :is_repackaged, :boolean, default: false
     field :length_cm, :integer
     field :level, :string
     field :location_address_label, :string
@@ -22,12 +23,11 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
     field :pallet_uuid, Ecto.UUID
     field :picture_back, :string
     field :picture_front, :string
-    field :picture_side_left, :string
-    field :picture_side_right, :string
+    field :picture_left, :string
+    field :picture_right, :string
     field :picture_top, :string
     field :position, :string
     field :rack, :string
-    field :repackaged, :boolean, default: false
     field :shelf_color, :string
     field :tags, :string
     field :value_added_notes, :string
@@ -43,7 +43,6 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
   def changeset(tracking_status, attrs) do
     tracking_status
     |> cast(attrs, [
-      # :uuid,
       :pallet_uuid,
       :package_uuid,
       :vehicle_uuid,
@@ -52,7 +51,6 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
       :gate,
       :location_uuid,
       :location_address_label,
-      :repackaged,
       :weight_gm,
       :length_cm,
       :width_cm,
@@ -62,13 +60,14 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
       :bay,
       :level,
       :is_damaged,
+      :is_repackaged,
       :value_added_notes,
       :pallet_ext_id,
       :package_ext_id,
       :picture_back,
       :picture_front,
-      :picture_side_left,
-      :picture_side_right,
+      :picture_left,
+      :picture_right,
       :picture_top,
       :position,
       :operator_uuid,

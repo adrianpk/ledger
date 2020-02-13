@@ -1,8 +1,18 @@
 defmodule Ledger.Warehouse do
   @moduledoc """
-  Bounded context for Warehouse system.
+  The Warehouse context.
   """
-  alias Ledger.Warehouse.Commands.ReceiveFromTransport
+
+  import Ecto.Query, warn: false
+  alias Ledger.Repo
+
+  alias Ledger.Warehouse.TrackingStatus
+
+  alias Ledger.Warehouse.Commands.{
+    ReceiveFromTransport,
+    ClassifyItem
+  }
+
   alias Ledger.Warehouse.Projections.TrackingStatus
   alias Ledger.App
   alias Ledger.Repo
@@ -20,6 +30,21 @@ defmodule Ledger.Warehouse do
 
     with :ok <- App.dispatch(receive_from_transport, consistency: :strong) do
       get(TrackingStatus, uuid)
+    else
+      reply -> reply
+    end
+  end
+
+  @doc """
+  Classify item.
+  """
+  def classify_item(attrs \\ %{}) do
+    classify_item =
+      attrs
+      |> ClassifyItem.new()
+
+    with :ok <- App.dispatch(classify_item, consistency: :strong) do
+      get(TrackingStatus, attrs[:tracking_uuid])
     else
       reply -> reply
     end

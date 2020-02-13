@@ -8,13 +8,10 @@ defmodule Ledger.Router do
 
   alias Ledger.Warehouse.Commands.{
     ReceiveFromTransport,
-    ClassifyItem,
-    }
-  alias Ledger.Warehouse.Aggregates.Tracking
+    ClassifyItem
+  }
 
-  # dispatch [
-  #   ReceiveFromTransport
-  # ], to: Tracking
+  alias Ledger.Warehouse.Aggregates.Tracking
 
   dispatch(
     [
