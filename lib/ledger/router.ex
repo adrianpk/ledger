@@ -3,20 +3,20 @@ defmodule Ledger.Router do
 
   alias Ledger.Warehouse.Commands.{
     ReceiveFromTransport,
-    ClassifyItem
+    ClassifyItem,
+    RelocateInStore,
+    RequestShipping
   }
 
-  alias Ledger.Warehouse.Commands.{
-    ReceiveFromTransport,
-    ClassifyItem
-  }
-
+  import Ledger.Warehouse.Aggregates.Tracking
   alias Ledger.Warehouse.Aggregates.Tracking
 
   dispatch(
     [
       ReceiveFromTransport,
-      ClassifyItem
+      ClassifyItem,
+      RelocateInStore,
+      RequestShipping,
     ],
     to: Tracking,
     identity: :tracking_uuid,

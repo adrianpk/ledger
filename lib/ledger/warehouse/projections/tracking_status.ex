@@ -14,6 +14,7 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
     field :length_cm, :integer
     field :level, :string
     field :location, :string
+    field :addressee, :string
     field :shipping_address, :string
     field :notes, :string
     field :operator_uuid, Ecto.UUID
@@ -50,6 +51,7 @@ defmodule Ledger.Warehouse.Projections.TrackingStatus do
       :driver_uuid,
       :warehouse_uuid,
       :gate,
+      :addressee,
       :shipping_address,
       :weight_gm,
       :location,

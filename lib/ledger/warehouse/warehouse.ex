@@ -10,7 +10,9 @@ defmodule Ledger.Warehouse do
 
   alias Ledger.Warehouse.Commands.{
     ReceiveFromTransport,
-    ClassifyItem
+    ClassifyItem,
+    RelocateInStore,
+    RequestShipping,
   }
 
   alias Ledger.Warehouse.Projections.TrackingStatus
@@ -44,6 +46,36 @@ defmodule Ledger.Warehouse do
       |> ClassifyItem.new()
 
     with :ok <- App.dispatch(classify_item, consistency: :strong) do
+      get(TrackingStatus, attrs[:tracking_uuid])
+    else
+      reply -> reply
+    end
+  end
+
+  @doc """
+  RelocateInStore.
+  """
+  def relocate_in_store(attrs \\ %{}) do
+    relocate_in_store =
+      attrs
+      |> RelocateInStore.new()
+
+    with :ok <- App.dispatch(relocate_in_store, consistency: :strong) do
+      get(TrackingStatus, attrs[:tracking_uuid])
+    else
+      reply -> reply
+    end
+  end
+
+  @doc """
+  RequestShipment.
+  """
+  def request_shipping(attrs \\ %{}) do
+    request_shipping =
+      attrs
+      |> RequestShipping.new()
+
+    with :ok <- App.dispatch(request_shipping, consistency: :strong) do
       get(TrackingStatus, attrs[:tracking_uuid])
     else
       reply -> reply

@@ -56,6 +56,11 @@ defmodule Ledger.Factory do
   def relocate_notes, do: @notes3
   @tags3 "tagG, tagH, tagsI"
   def relocate_tags, do: @tags3
+  # Request shipping
+  @str7 "Mrs. Layla Prescott"
+  def addressee, do: @str7
+  @str8 "Französisch Buchholz, 13125 Berlin, Germany"
+  def shipping_address, do: @str8
 
   def receive_from_transport_factory do
     %{
@@ -92,7 +97,6 @@ defmodule Ledger.Factory do
     }
   end
 
-
   def relocate_in_store_factory do
     %{
       operator_uuid: operator_2_uuid(),
@@ -101,6 +105,16 @@ defmodule Ledger.Factory do
       bay: bay(),
       level: level(),
       position: position(),
+      notes: relocate_notes(),
+      tags: relocate_tags()
+    }
+  end
+
+  def request_shipping_factory do
+    %{
+      operator_uuid: operator_2_uuid(),
+      addressee: addressee(),
+      shipping_address: shipping_address(),
       notes: relocate_notes(),
       tags: relocate_tags()
     }

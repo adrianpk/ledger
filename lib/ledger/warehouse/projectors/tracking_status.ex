@@ -7,7 +7,8 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
   alias Ledger.Warehouse.Events.{
     ReceivedFromTransport,
     ClassifiedItem,
-    RelocatedInStore
+    RelocatedInStore,
+    RequestedShipping,
   }
 
   alias Ledger.Warehouse.Projections.TrackingStatus
@@ -28,7 +29,6 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
       status: event.status
     })
   end
-
 
   project(%ClassifiedItem{} = event, fn multi ->
     update_tracking_status(multi, event.tracking_uuid,
@@ -53,7 +53,6 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
     )
   end)
 
-
   project(%RelocatedInStore{} = event, fn multi ->
     update_tracking_status(multi, event.tracking_uuid,
       operator_uuid: event.operator_uuid,
@@ -63,6 +62,18 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
       bay: event.bay,
       level: event.level,
       position: event.position,
+      notes: event.notes,
+      tags: event.tags,
+      status: event.status
+    )
+  end)
+
+  project(%RequestedShipping{} = event, fn multi ->
+    update_tracking_status(multi, event.tracking_uuid,
+      operator_uuid: event.operator_uuid,
+      location: event.location,
+      addressee: event.addressee,
+      shipping_address: event.shipping_address,
       notes: event.notes,
       tags: event.tags,
       status: event.status

@@ -33,7 +33,7 @@ defmodule Ledger.Warehouse.WarehouseTest do
         build(:classify_item)
         |> Map.put(:tracking_uuid, ts.uuid)
 
-       assert {:ok, %TrackingStatus{} = tracking} = Warehouse.classify_item(attrs)
+      assert {:ok, %TrackingStatus{} = tracking} = Warehouse.classify_item(attrs)
       assert tracking.operator_uuid == operator_uuid()
       assert tracking.pallet_uuid == pallet_uuid()
       assert tracking.package_uuid == package_uuid()
@@ -55,7 +55,6 @@ defmodule Ledger.Warehouse.WarehouseTest do
     end
   end
 
-
   describe "relocate in store" do
     @tag :integration
     test "should succeed with valid data" do
@@ -65,16 +64,35 @@ defmodule Ledger.Warehouse.WarehouseTest do
         build(:relocate_in_store)
         |> Map.put(:tracking_uuid, ts.uuid)
 
-       assert {:ok, %TrackingStatus{} = tracking} = Warehouse.relocate_in_store(attrs)
-       assert tracking.operator_uuid == operator_uuid()
-       assert tracking.shelf_color == shelf_color()
-       assert tracking.rack == rack()
-       assert tracking.bay == bay()
-       assert tracking.level == level()
-       assert tracking.position == position()
-       assert tracking.notes == relocate_notes()
-       assert tracking.tags == relocate_tags()
+      assert {:ok, %TrackingStatus{} = tracking} = Warehouse.relocate_in_store(attrs)
+      assert tracking.operator_uuid == operator_uuid()
+      assert tracking.shelf_color == shelf_color()
+      assert tracking.rack == rack()
+      assert tracking.bay == bay()
+      assert tracking.level == level()
+      assert tracking.position == position()
+      assert tracking.notes == relocate_notes()
+      assert tracking.tags == relocate_tags()
       assert tracking.status == "stored"
+      assert tracking.location == "store"
+    end
+  end
+
+  describe "request shipping" do
+    @tag :integration
+    test "should succeed with valid data" do
+      ts = sample_tracking_status()
+
+      attrs =
+        build(:request_shipping)
+        |> Map.put(:tracking_uuid, ts.uuid)
+
+      assert {:ok, %TrackingStatus{} = tracking} = Warehouse.request_shipping(attrs)
+      IO.inspect tracking
+      assert tracking.operator_uuid == operator_uuid()
+      assert tracking.addressee == addressee()
+      assert tracking.shipping_address == shipping_address()
+      assert tracking.status == "shipping-requested"
       assert tracking.location == "store"
     end
   end
