@@ -1,4 +1,4 @@
-defmodule Ledger.Warehouse.Commands.RequestShipment do
+defmodule Ledger.Warehouse.Commands.RequestShipping do
   defstruct tracking_uuid: nil,
             operator_uuid: nil,
             addressee: nil,

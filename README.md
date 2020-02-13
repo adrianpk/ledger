@@ -72,7 +72,7 @@ Eventually fields can be used to  store path while images are saved in disk, buc
     "payload": {
       "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
       "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
-      "shelf_colorr": "green",
+      "shelf_color": "green",
       "rack": "A",
       "bay": "02",
       "level": "E",
@@ -85,3 +85,22 @@ Eventually fields can be used to  store path while images are saved in disk, buc
 ```
 
 ### Warehouse ᐅ Cloud
+
+
+**RequestShipment**
+
+```json
+{
+  "payload": {
+    "command": "request-shipment",
+    "payload": {
+      "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
+      "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
+      "addressee": "Mrs. Layla Prescott",
+      "shipping_address": "Französisch Buchholz, 13125 Berlin, Germany",
+      "notes": "13:00 to 17:00 only",
+      "tags": "tag10"
+    }
+  }
+}
+```

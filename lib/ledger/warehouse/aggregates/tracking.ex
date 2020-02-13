@@ -48,7 +48,6 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
           warehouse_uuid: UUID.t() | nil,
           gate_uuid: UUID.t() | nil,
           operator_uuid: UUID.t() | nil,
-          pallet_uuid: UUID.t() | nil,
           shelf_color: String.t() | nil,
           rack: String.t() | nil,
           bay: String.t() | nil,
@@ -89,17 +88,18 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
   @damaged_loc "damaged-store"
   @outgate_loc "out-gate"
 
-
   alias Ledger.Warehouse.Commands.{
     ReceiveFromTransport,
     ClassifyItem,
-    RelocateInStore
+    RelocateInStore,
+    RequestShipping
   }
 
   alias Ledger.Warehouse.Events.{
     ReceivedFromTransport,
     ClassifiedItem,
-    RelocatedInStore
+    RelocatedInStore,
+    RequestedShipping
   }
 
   alias Ledger.Warehouse.Aggregates.Tracking
@@ -107,7 +107,6 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
   @doc """
   Receive from transport.
   """
-  # def execute(%Tracking{uuid: nil}, %ReceiveFromTransport{} = command) do
   def execute(%Tracking{uuid: nil}, %ReceiveFromTransport{} = command) do
     %ReceivedFromTransport{
       tracking_uuid: command.tracking_uuid,
@@ -121,7 +120,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       notes: command.notes,
       tags: command.tags,
       status: @received_st,
-      location: @ingate_loc,
+      location: @ingate_loc
     }
   end
 
@@ -151,14 +150,13 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       notes: command.notes,
       tags: command.tags,
       status: @classified_st,
-      location: @reception_loc,
+      location: @reception_loc
     }
   end
 
   @doc """
-  Relocate to storage.
+  Relocate in store.
   """
-  # def execute(%Tracking{uuid: nil}, %RelocateInStore{} = command) do
   def execute(
         %Tracking{uuid: tracking_uuid},
         %RelocateInStore{tracking_uuid: tracking_uuid} = command
@@ -174,7 +172,26 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       notes: command.notes,
       tags: command.tags,
       status: @stored_st,
-      location: @store_loc,
+      location: @store_loc
+    }
+  end
+
+  @doc """
+  Request shipment.
+  """
+  def execute(
+        %Tracking{uuid: tracking_uuid},
+        %RequestShipping{tracking_uuid: tracking_uuid} = command
+      ) do
+    %RequestedShipping{
+      tracking_uuid: command.tracking_uuid,
+      operator_uuid: command.operator_uuid,
+      addressee: command.addressee,
+      shipping_address: command.shipping_address,
+      notes: command.notes,
+      tags: command.tags,
+      status: @shipping_requested_st,
+      location: @store_loc
     }
   end
 
@@ -230,12 +247,28 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       ) do
     %Tracking{
       tracking
-      | operator_uuid: event.pallet_uuid,
+      | operator_uuid: event.operator_uuid,
         shelf_color: event.shelf_color,
         rack: event.shelf_color,
         bay: event.shelf_color,
         level: event.shelf_color,
         position: event.shelf_color,
+        notes: tracking.notes <> "\n" <> event.notes,
+        tags: tracking.tags <> ", " <> event.tags,
+        status: event.status,
+        location: event.location
+    }
+  end
+
+  def apply(
+        %Tracking{uuid: tracking_uuid} = tracking,
+        %RequestedShipping{tracking_uuid: tracking_uuid} = event
+      ) do
+    %Tracking{
+      tracking
+      | operator_uuid: event.operator_uuid,
+        addressee: event.addressee,
+        shipping_address: event.shipping_address,
         notes: tracking.notes <> "\n" <> event.notes,
         tags: tracking.tags <> ", " <> event.tags,
         status: event.status,
