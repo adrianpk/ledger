@@ -19,6 +19,7 @@ defmodule Ledger.Warehouse.WarehouseTest do
       assert tracking.operator_uuid == operator_uuid()
       assert tracking.notes == reception_notes()
       assert tracking.tags == reception_tags()
+      assert tracking.status == "received"
     end
   end
 
@@ -48,6 +49,7 @@ defmodule Ledger.Warehouse.WarehouseTest do
       assert tracking.is_damaged == false
       assert tracking.notes == classify_notes()
       assert tracking.tags == classify_tags()
+      assert tracking.status == "classified"
     end
   end
 
@@ -70,6 +72,7 @@ defmodule Ledger.Warehouse.WarehouseTest do
        assert tracking.position == position()
        assert tracking.notes == relocate_notes()
        assert tracking.tags == relocate_tags()
+      assert tracking.status == "stored"
     end
   end
 

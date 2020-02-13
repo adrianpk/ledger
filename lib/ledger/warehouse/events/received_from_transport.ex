@@ -10,7 +10,8 @@ defmodule Ledger.Warehouse.Events.ReceivedFromTransport do
             gate_uuid: nil,
             operator_uuid: nil,
             notes: nil,
-            tags: nil
+            tags: nil,
+            status: nil
 
   @typedoc """
   ReceivedFromTransport command field types.
@@ -28,6 +29,7 @@ defmodule Ledger.Warehouse.Events.ReceivedFromTransport do
           gate_uuid: UUID.t() | nil,
           operator_uuid: UUID.t() | nil,
           notes: String.t() | nil,
-          tags: String.t() | nil
+          tags: String.t() | nil,
+          status: String.t() | nil
         }
 end

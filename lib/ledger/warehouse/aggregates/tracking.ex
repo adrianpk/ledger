@@ -28,6 +28,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
             is_repackaged: nil,
             is_damaged: nil,
             notes: nil,
+            status: nil,
             tags: nil
 
   @type t :: %__MODULE__{
@@ -60,9 +61,16 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
           picture_top: String.t() | nil,
           is_repackaged: Boolean.t() | nil,
           is_damaged: Boolean.t() | nil,
+          status: String.t() | nil,
           tags: String.t() | nil,
           notes: UUID.t() | nil
         }
+
+  @received_st "received"
+  @classified_st "classified"
+  @stored_st "stored"
+  @shipment_requested_st "shipment-requested"
+  @dispatched_st "dispatched"
 
   alias Ledger.Warehouse.Commands.{
     ReceiveFromTransport,
@@ -93,7 +101,8 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       gate_uuid: command.gate_uuid,
       operator_uuid: command.operator_uuid,
       notes: command.notes,
-      tags: command.tags
+      tags: command.tags,
+      status: @received_st,
     }
   end
 
@@ -121,7 +130,8 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       is_repackaged: command.is_repackaged,
       is_damaged: command.is_damaged,
       notes: command.notes,
-      tags: command.tags
+      tags: command.tags,
+      status: @classified_st,
     }
   end
 
@@ -142,7 +152,8 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       level: command.level,
       position: command.position,
       notes: command.notes,
-      tags: command.tags
+      tags: command.tags,
+      status: @stored_st,
     }
   end
 
