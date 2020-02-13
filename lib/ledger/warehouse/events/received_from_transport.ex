@@ -2,6 +2,7 @@ defmodule Ledger.Warehouse.Events.ReceivedFromTransport do
   @derive Jason.Encoder
 
   defstruct tracking_uuid: nil,
+            location: nil,
             vehicle_uuid: nil,
             driver_uuid: nil,
             pallet_ext_id: nil,
@@ -20,6 +21,7 @@ defmodule Ledger.Warehouse.Events.ReceivedFromTransport do
 
   @type t :: %__MODULE__{
           tracking_uuid: UUID.t(),
+          location: String.t() | nil,
           vehicle_uuid: UUID.t() | nil,
           driver_uuid: UUID.t() | nil,
           pallet_ext_id: String.t() | nil,

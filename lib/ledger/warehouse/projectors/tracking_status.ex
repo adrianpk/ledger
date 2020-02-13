@@ -4,10 +4,6 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
     name: "Ledger.Warehouse.Projectors.TrackingStatus",
     consistency: :strong
 
-  alias Ecto.{Changeset, Multi}
-
-  alias Ledger.Warehouse
-
   alias Ledger.Warehouse.Events.{
     ReceivedFromTransport,
     ClassifiedItem,
