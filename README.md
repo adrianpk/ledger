@@ -17,13 +17,13 @@ At the moment I asume that the loading process of vehicle, driver, gate, etc is 
   "payload": {
     "command": "receive-from-transport",
     "payload": {
-      "warehouseUUID": "e682bb16-5738-46c6-abbd-33575b5379a0",
-      "gateUUID": "cb650975-0f77-47bd-ba86-44352bc1649a",
-      "operatorUUID": "d61b3b98-643e-4e80-a621-802f5cfb636b",
-      "vehicleUUID": "9f1ba2b5-91a5-4907-8403-e94a1f8b1bd8",
-      "driverUUID": "2befab04-9971-4351-a8d4-14e62da96e80",
-      "palletExtID": "some-ext-code",
-      "packageExtID": "some-ext-code",
+      "warehouse_uuid": "e682bb16-5738-46c6-abbd-33575b5379a0",
+      "gate_uuid": "cb650975-0f77-47bd-ba86-44352bc1649a",
+      "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
+      "vehicle_uuid": "9f1ba2b5-91a5-4907-8403-e94a1f8b1bd8",
+      "driver_uuid": "2befab04-9971-4351-a8d4-14e62da96e80",
+      "pallet_ext_id": "some-ext-code",
+      "package_ext_id": "some-ext-code",
       "notes": "Sample note",
       "tags": "tag1, tags2, tag3"
     }
@@ -38,26 +38,30 @@ At the moment I asume that the loading process of vehicle, driver, gate, etc is 
   "payload": {
     "command": "classify-item",
     "payload": {
-      "trackingUUID": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
-      "operatorUUID": "d61b3b98-643e-4e80-a621-802f5cfb636b",
-      "palletUUID": "7cdf9aa6-4816-41d2-9773-4894146fbec1",
-      "packageUUID": "f577bfd3-b6f3-43da-8c1b-a24d97c2246d",
-      "lengthCm": "50",
-      "widthCm": "80",
-      "heightCm": "40",
-      "weightGm": "40",
+      "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
+      "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
+      "pallet_uuid": "7cdf9aa6-4816-41d2-9773-4894146fbec1",
+      "package_uuid": "f577bfd3-b6f3-43da-8c1b-a24d97c2246d",
+      "length_cm": "50",
+      "width_cm": "80",
+      "height_cm": "40",
+      "weight_gm": "40",
       "picture_front": "data:image/png;base64,iVBORw0KG...II=",
       "picture_back": "data:image/png;base64,iVBORw0KG...II=",
       "picture_left": "data:image/png;base64,iVBORw0KG...II=",
       "picture_right": "data:image/png;base64,iVBORw0KG...II=",
       "picture_top": "data:image/png;base64,iVBORw0KG...II=",
-      "heightCm": "40",
-      "notes": "Sample note",
-      "tags": "tag1, tags2, tag3"
+      "notes": "Note updated",
+      "tags": "tag4, tag5, tag6"
     }
   }
 }
 ```
+
+**Note:** Images are stored are stored in the database (Base64 encoding) along with other properties.
+This gives some advantage if you want to have a single backup of all data but it can be impact in performant dependinng on  context.
+Eventually fields can be used to  store path while images are saved in disk, buck, etc.
+
 
 **RelocateInStore**
 
@@ -66,15 +70,15 @@ At the moment I asume that the loading process of vehicle, driver, gate, etc is 
   "payload": {
     "command": "relocate-to-store",
     "payload": {
-      "trackingUUID": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
-      "operatorUUID": "d61b3b98-643e-4e80-a621-802f5cfb636b",
-      "shelfColor": "green",
+      "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
+      "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
+      "shelf_colorr": "green",
       "rack": "A",
       "bay": "02",
       "level": "E",
       "position": "5",
-      "notes": "Sample note",
-      "tags": "tag1, tags2, tag3"
+      "notes": "Note updated again",
+      "tags": "tag7, tags8, tag9"
     }
   }
 }
