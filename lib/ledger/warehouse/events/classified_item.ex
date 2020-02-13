@@ -2,8 +2,8 @@ defmodule Ledger.Warehouse.Events.ClassifiedItem do
   @derive Jason.Encoder
 
   defstruct tracking_uuid: nil,
-            package_uuid: nil,
             operator_uuid: nil,
+            location: nil,
             package_uuid: nil,
             pallet_uuid: nil,
             length_cm: nil,
@@ -29,6 +29,7 @@ defmodule Ledger.Warehouse.Events.ClassifiedItem do
   @type t :: %__MODULE__{
           tracking_uuid: UUID.t(),
           operator_uuid: UUID.t() | nil,
+          location: String.t() | nil,
           pallet_uuid: UUID.t() | nil,
           package_uuid: UUID.t() | nil,
           length_cm: Integer.t() | nil,

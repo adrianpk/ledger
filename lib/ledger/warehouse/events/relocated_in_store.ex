@@ -2,6 +2,7 @@ defmodule Ledger.Warehouse.Events.RelocatedInStore do
   @derive Jason.Encoder
 
   defstruct tracking_uuid: nil,
+            location: nil,
             operator_uuid: nil,
             shelf_color: nil,
             rack: nil,
@@ -19,6 +20,7 @@ defmodule Ledger.Warehouse.Events.RelocatedInStore do
 
   @type t :: %__MODULE__{
           tracking_uuid: UUID.t(),
+          location: String.t() | nil,
           operator_uuid: UUID.t() | nil,
           shelf_color: String.t() | nil,
           rack: String.t() | nil,

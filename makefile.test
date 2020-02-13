@@ -2,23 +2,20 @@
 
 test-selected:
 	clear
-	#@make spacer
-	#make -f makefile.test test-receive-from-transport
-	#@make spacer
-	#make -f makefile.test test-classify-item
+	@make spacer
+	make -f makefile.test test-receive-from-transport
+	@make spacer
+	make -f makefile.test test-classify-item
 	@make spacer
 	make -f makefile.test test-classify-item
 
 ## Warehouse
 
 test-receive-from-transport:
-	clear
 	mix test ./test/ledger/warehouse/warehouse_test.exs:7
 
 test-classify-item:
-	clear
-	mix test ./test/ledger/warehouse/warehouse_test.exs:25
+	mix test ./test/ledger/warehouse/warehouse_test.exs:26
 
 test-relocate-in-store:
-	clear
-	mix test ./test/ledger/warehouse/warehouse_test.exs:55
+	mix test ./test/ledger/warehouse/warehouse_test.exs:57

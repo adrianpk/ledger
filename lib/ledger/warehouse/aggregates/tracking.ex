@@ -27,7 +27,11 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
             picture_top: nil,
             is_repackaged: nil,
             is_damaged: nil,
+            shipment_address: nil,
             notes: nil,
+            location: nil,
+            addressee: nil,
+            shipment_address: nil,
             status: nil,
             tags: nil
 
@@ -61,16 +65,29 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
           picture_top: String.t() | nil,
           is_repackaged: Boolean.t() | nil,
           is_damaged: Boolean.t() | nil,
+          location: String.t() | nil,
           status: String.t() | nil,
           tags: String.t() | nil,
+          addressee: String.t() | nil,
+          shipment_address: nil,
           notes: UUID.t() | nil
         }
 
+  # Status
   @received_st "received"
   @classified_st "classified"
   @stored_st "stored"
   @shipment_requested_st "shipment-requested"
   @dispatched_st "dispatched"
+  # Location
+  @ingate_loc "in-gate"
+  @reception_loc "reception"
+  @store_loc "store"
+  @damaged_loc "damaged-store"
+  @outdesk_loc "out-desk"
+  @damaged_loc "damaged-store"
+  @outgate_loc "out-gate"
+
 
   alias Ledger.Warehouse.Commands.{
     ReceiveFromTransport,
@@ -102,7 +119,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       operator_uuid: command.operator_uuid,
       notes: command.notes,
       tags: command.tags,
-      status: @received_st,
+      status: @ingate_loc,
     }
   end
 
@@ -132,6 +149,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       notes: command.notes,
       tags: command.tags,
       status: @classified_st,
+      status: @reception_loc,
     }
   end
 
@@ -154,6 +172,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       notes: command.notes,
       tags: command.tags,
       status: @stored_st,
+      status: @store_loc,
     }
   end
 
@@ -170,7 +189,9 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
         gate_uuid: event.gate_uuid,
         operator_uuid: event.operator_uuid,
         notes: event.notes,
-        tags: event.tags
+        tags: event.tags,
+        status: event.status,
+        location: event.location
     }
   end
 
@@ -195,7 +216,9 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
         is_repackaged: event.is_repackaged,
         is_damaged: event.is_damaged,
         notes: tracking.notes <> "\n" <> event.notes,
-        tags: tracking.tags <> ", " <> event.tags
+        tags: tracking.tags <> ", " <> event.tags,
+        status: event.status,
+        location: event.location
     }
   end
 
@@ -212,7 +235,9 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
         level: event.shelf_color,
         position: event.shelf_color,
         notes: tracking.notes <> "\n" <> event.notes,
-        tags: tracking.tags <> ", " <> event.tags
+        tags: tracking.tags <> ", " <> event.tags,
+        status: event.status,
+        location: event.location
     }
   end
 end
