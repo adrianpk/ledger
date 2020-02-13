@@ -32,11 +32,27 @@ defmodule Ledger.Warehouse.WarehouseTest do
         |> Map.put(:tracking_uuid, ts.uuid)
 
        assert {:ok, %TrackingStatus{} = tracking} = Warehouse.classify_item(attrs)
+      assert tracking.operator_uuid == operator_uuid()
+      assert tracking.pallet_uuid == pallet_uuid()
+      assert tracking.package_uuid == package_uuid()
+      assert tracking.length_cm == length()
+      assert tracking.width_cm == width()
+      assert tracking.height_cm == height()
+      assert tracking.weight_gm == weight()
+      assert tracking.picture_front == sample_front_image()
+      assert tracking.picture_back == ""
+      assert tracking.picture_left == ""
+      assert tracking.picture_right == ""
+      assert tracking.picture_top == ""
+      assert tracking.is_repackaged == false
+      assert tracking.is_damaged == false
+      assert tracking.notes == classify_notes()
+      assert tracking.tags == classify_tags()
     end
   end
 
   defp sample_tracking_status() do
-    {:ok, tracking_status} = Warehouse.receive_from_transport(build(:receive_from_transport))
-    tracking_status
+    {:ok, tracking} = Warehouse.receive_from_transport(build(:receive_from_transport))
+    tracking
   end
 end
