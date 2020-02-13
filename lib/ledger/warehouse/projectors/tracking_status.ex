@@ -15,6 +15,7 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
   project %ReceivedFromTransport{} = event do
     Ecto.Multi.insert(multi, :tracking_status, %TrackingStatus{
       uuid: event.tracking_uuid,
+      location: event.location,
       vehicle_uuid: event.vehicle_uuid,
       driver_uuid: event.driver_uuid,
       pallet_ext_id: event.pallet_ext_id,
@@ -32,6 +33,7 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
   project(%ClassifiedItem{} = event, fn multi ->
     update_tracking_status(multi, event.tracking_uuid,
       operator_uuid: event.operator_uuid,
+      location: event.location,
       pallet_uuid: event.pallet_uuid,
       package_uuid: event.package_uuid,
       length_cm: event.length_cm,
@@ -55,6 +57,7 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
   project(%RelocatedInStore{} = event, fn multi ->
     update_tracking_status(multi, event.tracking_uuid,
       operator_uuid: event.operator_uuid,
+      location: event.location,
       shelf_color: event.shelf_color,
       rack: event.rack,
       bay: event.bay,
