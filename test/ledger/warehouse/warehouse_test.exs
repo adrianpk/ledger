@@ -51,6 +51,28 @@ defmodule Ledger.Warehouse.WarehouseTest do
     end
   end
 
+
+  describe "relocate in store" do
+    @tag :integration
+    test "should succeed with valid data" do
+      ts = sample_tracking_status()
+
+      attrs =
+        build(:relocate_in_store)
+        |> Map.put(:tracking_uuid, ts.uuid)
+
+       assert {:ok, %TrackingStatus{} = tracking} = Warehouse.relocate_in_store(attrs)
+       assert tracking.operator_uuid == operator_uuid()
+       assert tracking.shelf_color == shelf_color()
+       assert tracking.rack == rack()
+       assert tracking.bay == bay()
+       assert tracking.level == level()
+       assert tracking.position == position()
+       assert tracking.notes == relocate_notes()
+       assert tracking.tags == relocate_tags()
+    end
+  end
+
   defp sample_tracking_status() do
     {:ok, tracking} = Warehouse.receive_from_transport(build(:receive_from_transport))
     tracking

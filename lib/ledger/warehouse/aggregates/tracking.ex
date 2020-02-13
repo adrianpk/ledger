@@ -81,19 +81,19 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
   @doc """
   Receive from transport.
   """
-  # def execute(%Tracking{uuid: nil}, %ReceiveFromTransport{} = to_receive) do
-  def execute(%Tracking{uuid: nil}, %ReceiveFromTransport{} = to_receive) do
+  # def execute(%Tracking{uuid: nil}, %ReceiveFromTransport{} = command) do
+  def execute(%Tracking{uuid: nil}, %ReceiveFromTransport{} = command) do
     %ReceivedFromTransport{
-      tracking_uuid: to_receive.tracking_uuid,
-      vehicle_uuid: to_receive.vehicle_uuid,
-      driver_uuid: to_receive.driver_uuid,
-      pallet_ext_id: to_receive.pallet_ext_id,
-      package_ext_id: to_receive.package_ext_id,
-      warehouse_uuid: to_receive.warehouse_uuid,
-      gate_uuid: to_receive.gate_uuid,
-      operator_uuid: to_receive.operator_uuid,
-      notes: to_receive.notes,
-      tags: to_receive.tags
+      tracking_uuid: command.tracking_uuid,
+      vehicle_uuid: command.vehicle_uuid,
+      driver_uuid: command.driver_uuid,
+      pallet_ext_id: command.pallet_ext_id,
+      package_ext_id: command.package_ext_id,
+      warehouse_uuid: command.warehouse_uuid,
+      gate_uuid: command.gate_uuid,
+      operator_uuid: command.operator_uuid,
+      notes: command.notes,
+      tags: command.tags
     }
   end
 
@@ -102,131 +102,106 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
   """
   def execute(
         %Tracking{uuid: tracking_uuid},
-        %ClassifyItem{tracking_uuid: tracking_uuid} = to_classify
+        %ClassifyItem{tracking_uuid: tracking_uuid} = command
       ) do
     %ClassifiedItem{
       tracking_uuid: tracking_uuid,
-      operator_uuid: to_classify.operator_uuid,
-      pallet_uuid: to_classify.pallet_uuid,
-      package_uuid: to_classify.package_uuid,
-      length_cm: to_classify.length_cm,
-      width_cm: to_classify.width_cm,
-      height_cm: to_classify.height_cm,
-      weight_gm: to_classify.weight_gm,
-      picture_front: to_classify.picture_front,
-      picture_back: to_classify.picture_back,
-      picture_left: to_classify.picture_left,
-      picture_right: to_classify.picture_right,
-      picture_top: to_classify.picture_top,
-      is_repackaged: to_classify.is_repackaged,
-      is_damaged: to_classify.is_damaged,
-      notes: to_classify.notes,
-      tags: to_classify.tags
+      operator_uuid: command.operator_uuid,
+      pallet_uuid: command.pallet_uuid,
+      package_uuid: command.package_uuid,
+      length_cm: command.length_cm,
+      width_cm: command.width_cm,
+      height_cm: command.height_cm,
+      weight_gm: command.weight_gm,
+      picture_front: command.picture_front,
+      picture_back: command.picture_back,
+      picture_left: command.picture_left,
+      picture_right: command.picture_right,
+      picture_top: command.picture_top,
+      is_repackaged: command.is_repackaged,
+      is_damaged: command.is_damaged,
+      notes: command.notes,
+      tags: command.tags
     }
   end
 
   @doc """
   Relocate to storage.
   """
-  # def execute(%Tracking{uuid: nil}, %RelocateInStore{} = to_relocate) do
-  def execute(%Tracking{uuid: _uuid}, %RelocateInStore{} = to_relocate) do
+  # def execute(%Tracking{uuid: nil}, %RelocateInStore{} = command) do
+  def execute(
+        %Tracking{uuid: tracking_uuid},
+        %RelocateInStore{tracking_uuid: tracking_uuid} = command
+      ) do
     %RelocatedInStore{
-      tracking_uuid: to_relocate.tracking_uuid,
-      operator_uuid: to_relocate.operator_uuid,
-      shelf_color: to_relocate.shelf_color,
-      rack: to_relocate.rack,
-      bay: to_relocate.bay,
-      level: to_relocate.level,
-      position: to_relocate.position,
-      notes: to_relocate.notes,
-      tags: to_relocate.tags
+      tracking_uuid: command.tracking_uuid,
+      operator_uuid: command.operator_uuid,
+      shelf_color: command.shelf_color,
+      rack: command.rack,
+      bay: command.bay,
+      level: command.level,
+      position: command.position,
+      notes: command.notes,
+      tags: command.tags
     }
   end
 
   # state mutators
-  def apply(%Tracking{} = tracking, %ReceivedFromTransport{} = received) do
+  def apply(%Tracking{} = tracking, %ReceivedFromTransport{} = event) do
     %Tracking{
       tracking
-      | uuid: received.tracking_uuid,
-        vehicle_uuid: received.vehicle_uuid,
-        driver_uuid: received.driver_uuid,
-        pallet_ext_id: received.pallet_ext_id,
-        package_ext_id: received.package_ext_id,
-        warehouse_uuid: received.warehouse_uuid,
-        gate_uuid: received.gate_uuid,
-        operator_uuid: received.operator_uuid,
-        notes: received.notes,
-        tags: received.tags
-    }
-  end
-
-
-  def apply(
-        %Tracking{} = tracking,
-        %ClassifiedItem{} = classified
-      ) do
-    %Tracking{
-      tracking
-      | uuid: classified.tracking_uuid,
-        pallet_uuid: classified.pallet_uuid,
-        package_uuid: classified.package_uuid,
-        operator_uuid: classified.operator_uuid,
-        length_cm: classified.length_cm,
-        width_cm: classified.width_cm,
-        height_cm: classified.height_cm,
-        weight_gm: classified.weight_gm,
-        picture_front: classified.picture_front,
-        picture_back: classified.picture_back,
-        picture_left: classified.picture_left,
-        picture_right: classified.picture_right,
-        picture_top: classified.picture_top,
-        is_repackaged: classified.is_repackaged,
-        is_damaged: classified.is_damaged,
-        notes: tracking.notes <> "\n" <> classified.notes,
-        tags: tracking.tags <> ", " <> classified.tags
-    }
-  end
-
-
-  def apply(
-        %Tracking{uuid: tracking_uuid} = tracking,
-        %ClassifiedItem{tracking_uuid: tracking_uuid} = classified
-      ) do
-    %Tracking{
-      tracking
-      | pallet_uuid: classified.pallet_uuid,
-        package_uuid: classified.package_uuid,
-        operator_uuid: classified.operator_uuid,
-        length_cm: classified.length_cm,
-        width_cm: classified.width_cm,
-        height_cm: classified.height_cm,
-        weight_gm: classified.weight_gm,
-        picture_front: classified.picture_front,
-        picture_back: classified.picture_back,
-        picture_left: classified.picture_left,
-        picture_right: classified.picture_right,
-        picture_top: classified.picture_top,
-        is_repackaged: classified.is_repackaged,
-        is_damaged: classified.is_damaged,
-        notes: tracking.notes <> "\n" <> classified.notes,
-        tags: tracking.tags <> ", " <> classified.tags
+      | uuid: event.tracking_uuid,
+        vehicle_uuid: event.vehicle_uuid,
+        driver_uuid: event.driver_uuid,
+        pallet_ext_id: event.pallet_ext_id,
+        package_ext_id: event.package_ext_id,
+        warehouse_uuid: event.warehouse_uuid,
+        gate_uuid: event.gate_uuid,
+        operator_uuid: event.operator_uuid,
+        notes: event.notes,
+        tags: event.tags
     }
   end
 
   def apply(
         %Tracking{uuid: tracking_uuid} = tracking,
-        %RelocatedInStore{tracking_uuid: tracking_uuid} = relocated
+        %ClassifiedItem{tracking_uuid: tracking_uuid} = event
       ) do
     %Tracking{
       tracking
-      | operator_uuid: relocated.pallet_uuid,
-        shelf_color: relocated.shelf_color,
-        rack: relocated.shelf_color,
-        bay: relocated.shelf_color,
-        level: relocated.shelf_color,
-        position: relocated.shelf_color,
-        notes: tracking.notes <> "\n" <> relocated.notes,
-        tags: tracking.tags <> ", " <> relocated.tags
+      | pallet_uuid: event.pallet_uuid,
+        package_uuid: event.package_uuid,
+        operator_uuid: event.operator_uuid,
+        length_cm: event.length_cm,
+        width_cm: event.width_cm,
+        height_cm: event.height_cm,
+        weight_gm: event.weight_gm,
+        picture_front: event.picture_front,
+        picture_back: event.picture_back,
+        picture_left: event.picture_left,
+        picture_right: event.picture_right,
+        picture_top: event.picture_top,
+        is_repackaged: event.is_repackaged,
+        is_damaged: event.is_damaged,
+        notes: tracking.notes <> "\n" <> event.notes,
+        tags: tracking.tags <> ", " <> event.tags
+    }
+  end
+
+  def apply(
+        %Tracking{uuid: tracking_uuid} = tracking,
+        %RelocatedInStore{tracking_uuid: tracking_uuid} = event
+      ) do
+    %Tracking{
+      tracking
+      | operator_uuid: event.pallet_uuid,
+        shelf_color: event.shelf_color,
+        rack: event.shelf_color,
+        bay: event.shelf_color,
+        level: event.shelf_color,
+        position: event.shelf_color,
+        notes: tracking.notes <> "\n" <> event.notes,
+        tags: tracking.tags <> ", " <> event.tags
     }
   end
 end

@@ -41,6 +41,21 @@ defmodule Ledger.Factory do
   def classify_notes, do: @notes2
   @tags2 "tagD, tagE, tagsF"
   def classify_tags, do: @tags2
+  # Relocate in store params
+  @color "green"
+  def shelf_color, do: @color
+  @str3 ""
+  def rack, do: @str3
+  @str4 ""
+  def bay, do: @str4
+  @str5 ""
+  def level, do: @str5
+  @str6 ""
+  def position, do: @str6
+  @notes3 "Relocate notes."
+  def relocate_notes, do: @notes3
+  @tags3 "tagG, tagH, tagsI"
+  def relocate_tags, do: @tags3
 
   def receive_from_transport_factory do
     %{
@@ -74,6 +89,20 @@ defmodule Ledger.Factory do
       is_damaged: false,
       notes: classify_notes(),
       tags: classify_tags()
+    }
+  end
+
+
+  def relocate_in_store_factory do
+    %{
+      operator_uuid: operator_2_uuid(),
+      shelf_color: shelf_color(),
+      rack: rack(),
+      bay: bay(),
+      level: level(),
+      position: position(),
+      notes: relocate_notes(),
+      tags: relocate_tags()
     }
   end
 
