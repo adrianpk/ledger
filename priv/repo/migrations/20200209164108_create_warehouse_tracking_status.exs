@@ -18,11 +18,11 @@ defmodule Ledger.Repo.Migrations.CreateWarehouseTrackingStatus do
       add :length_cm, :integer
       add :width_cm, :integer
       add :height_cm, :integer
-      add :picture_front, :string
-      add :picture_top, :string
-      add :picture_left, :string
-      add :picture_right, :string
-      add :picture_back, :string
+      add :picture_front, :text
+      add :picture_top, :text
+      add :picture_left, :text
+      add :picture_right, :text
+      add :picture_back, :text
       add :rack, :string
       add :shelf_color, :string
       add :bay, :string
