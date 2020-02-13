@@ -84,6 +84,39 @@ Eventually fields can be used to  store path while images are saved in disk, buc
 }
 ```
 
+**DispatchForShipping**
+
+```json
+{
+  "payload": {
+    "command": "receive-from-transport",
+    "payload": {
+      "gate_uuid": "cb650975-0f77-47bd-ba86-44352bc1649a",
+      "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
+      "notes": "Sample note",
+      "tags": "tag1, tags2, tag3"
+    }
+  }
+}
+```
+
+**Ship**
+
+**Not implemented yet**
+```json
+{
+  "payload": {
+    "command": "receive-from-transport",
+    "payload": {
+      "vehicle_uuid": "9f1ba2b5-91a5-4907-8403-e94a1f8b1bd8",
+      "driver_uuid": "2befab04-9971-4351-a8d4-14e62da96e80",
+      "notes": "Sample note",
+      "tags": "tag1, tags2, tag3"
+    }
+  }
+}
+```
+
 ### Warehouse ᐅ Cloud
 
 

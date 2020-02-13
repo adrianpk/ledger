@@ -61,6 +61,15 @@ defmodule Ledger.Factory do
   def addressee, do: @str7
   @str8 "Französisch Buchholz, 13125 Berlin, Germany"
   def shipping_address, do: @str8
+  # Dispatch for shipping
+  @uuid8 "327be821-024f-48a7-a63c-5fb5564f5e06"
+  def gate_2_uuid, do: @uuid8
+  @uuid9 "67e78856-211e-4910-b4fb-8ff5d258f4e1"
+  def operator_3_uuid, do: @uuid9
+  @notes3 "Dispatch notes"
+  def dispatch_notes, do: @notes4
+  @tags4 "dispatched"
+  def dispatch_tags, do: @tags4
 
   def receive_from_transport_factory do
     %{
@@ -117,6 +126,15 @@ defmodule Ledger.Factory do
       shipping_address: shipping_address(),
       notes: relocate_notes(),
       tags: relocate_tags()
+    }
+  end
+
+  def dispatch_for_shipping_factory do
+    %{
+      gate_uuid: gate_2_uuid(),
+      operator_uuid: operator_3_uuid(),
+      notes: dispatch_notes(),
+      tags: dispatch_tags()
     }
   end
 
