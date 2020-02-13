@@ -88,12 +88,30 @@ defmodule Ledger.Warehouse.WarehouseTest do
         |> Map.put(:tracking_uuid, ts.uuid)
 
       assert {:ok, %TrackingStatus{} = tracking} = Warehouse.request_shipping(attrs)
-      IO.inspect tracking
       assert tracking.operator_uuid == operator_uuid()
       assert tracking.addressee == addressee()
       assert tracking.shipping_address == shipping_address()
       assert tracking.status == "shipping-requested"
       assert tracking.location == "store"
+    end
+  end
+
+  describe "dispatch for shipping" do
+    @tag :integration
+    test "should succeed with valid data" do
+      ts = sample_tracking_status()
+
+      attrs =
+        build(:dispatch_for_shipping)
+        |> Map.put(:tracking_uuid, ts.uuid)
+
+      assert {:ok, %TrackingStatus{} = tracking} = Warehouse.dispatch_for_shipping(attrs)
+      assert tracking.gate_uuid == gate_2_uuid()
+      assert tracking.operator_uuid == operator_3_uuid()
+      assert tracking.notes == dispatch_notes()
+      assert tracking.tags == dispatch_tags()
+      assert tracking.status == "dispatched"
+      assert tracking.location == "out-gate"
     end
   end
 

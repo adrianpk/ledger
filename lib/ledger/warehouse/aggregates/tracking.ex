@@ -92,14 +92,16 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
     ReceiveFromTransport,
     ClassifyItem,
     RelocateInStore,
-    RequestShipping
+    RequestShipping,
+    DispatchForShipping
   }
 
   alias Ledger.Warehouse.Events.{
     ReceivedFromTransport,
     ClassifiedItem,
     RelocatedInStore,
-    RequestedShipping
+    RequestedShipping,
+    DispatchedForShipping
   }
 
   alias Ledger.Warehouse.Aggregates.Tracking
@@ -195,6 +197,24 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
     }
   end
 
+  @doc """
+  Dispatch for shipping.
+  """
+  def execute(
+        %Tracking{uuid: tracking_uuid},
+        %DispatchForShipping{tracking_uuid: tracking_uuid} = command
+      ) do
+    %DispatchedForShipping{
+      tracking_uuid: command.tracking_uuid,
+      gate_uuid: command.gate_uuid,
+      operator_uuid: command.operator_uuid,
+      notes: command.notes,
+      tags: command.tags,
+      status: @dispatched_st,
+      location: @outgate_loc
+    }
+  end
+
   # state mutators
   def apply(%Tracking{} = tracking, %ReceivedFromTransport{} = event) do
     %Tracking{
@@ -260,6 +280,7 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
     }
   end
 
+
   def apply(
         %Tracking{uuid: tracking_uuid} = tracking,
         %RequestedShipping{tracking_uuid: tracking_uuid} = event
@@ -269,8 +290,22 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
       | operator_uuid: event.operator_uuid,
         addressee: event.addressee,
         shipping_address: event.shipping_address,
-        notes: tracking.notes <> "\n" <> event.notes,
-        tags: tracking.tags <> ", " <> event.tags,
+        tags: event.tags,
+        status: event.status,
+        location: event.location
+    }
+  end
+
+  def apply(
+        %Tracking{uuid: tracking_uuid} = tracking,
+        %DispatchedForShipping{tracking_uuid: tracking_uuid} = event
+      ) do
+    %Tracking{
+      tracking
+      | operator_uuid: event.operator_uuid,
+        gate_uuid: event.gate_uuid,
+        notes: event.notes,
+        tags: event.tags,
         status: event.status,
         location: event.location
     }

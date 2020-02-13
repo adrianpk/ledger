@@ -5,7 +5,8 @@ defmodule Ledger.Router do
     ReceiveFromTransport,
     ClassifyItem,
     RelocateInStore,
-    RequestShipping
+    RequestShipping,
+    DispatchForShipping
   }
 
   import Ledger.Warehouse.Aggregates.Tracking
@@ -17,6 +18,7 @@ defmodule Ledger.Router do
       ClassifyItem,
       RelocateInStore,
       RequestShipping,
+      DispatchForShipping,
     ],
     to: Tracking,
     identity: :tracking_uuid,

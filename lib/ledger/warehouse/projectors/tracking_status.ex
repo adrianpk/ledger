@@ -9,6 +9,7 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
     ClassifiedItem,
     RelocatedInStore,
     RequestedShipping,
+    DispatchedForShipping,
   }
 
   alias Ledger.Warehouse.Projections.TrackingStatus
@@ -79,6 +80,17 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
       status: event.status
     )
   end)
+
+  project %DispatchedForShipping{} = event do
+    update_tracking_status(multi, event.tracking_uuid,
+      gate_uuid: event.gate_uuid,
+      location: event.location,
+      operator_uuid: event.operator_uuid,
+      notes: event.notes,
+      tags: event.tags,
+      status: event.status
+    )
+  end
 
   defp update_tracking_status(multi, tracking_uuid, changes) do
     Ecto.Multi.update_all(multi, :tracking_status, tracking_status_query(tracking_uuid),
