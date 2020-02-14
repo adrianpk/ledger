@@ -10,6 +10,14 @@ At the moment I asume that the loading process of vehicle, driver, gate, etc is 
 
 This is a proof of concept, in a real world implementation there would probably be additional commands that would allow users to request subsequent chain actions. i.e.: 'relocate-in-storage' action would be preceded by a 'request-relocation-in-storage' by way of ensuring any preparations at origin and destination as well as to send the necessary notifications.
 
+Remember also that the authorization and authentication aspects are beyond the scope of this implementation.
+
+## Routes
+
+| Method | Path      | Controller                | Function |
+|--------|-----------|---------------------------|----------|
+| POST   | /api/send | LedgerWeb.QueueController | :send    |
+
 ### Warehouse ᐅ Cloud
 
 **ReceiveFromTransport**
