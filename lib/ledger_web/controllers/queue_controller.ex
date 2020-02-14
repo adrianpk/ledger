@@ -3,7 +3,7 @@ defmodule LedgerWeb.QueueController do
 
   alias Ledger.Queue.Worker
 
-  def index(conn, params) do
+  def send(conn, params) do
     {:ok, message} = Poison.encode(params)
     Worker.publish(message)
 
