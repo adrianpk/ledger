@@ -11,7 +11,13 @@ defmodule Ledger.Queue.Worker do
   end
 
   def publish(message) do
-    IO.puts("Handling cast")
+    IO.puts("Handling TX")
+    GenServer.cast(:publisher, {:publish, message})
+  end
+
+
+  def receive(message) do
+    IO.puts("Handling RX")
     GenServer.cast(:publisher, {:publish, message})
   end
 
