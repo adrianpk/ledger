@@ -59,7 +59,7 @@ At the moment I asume that the loading process of vehicle, driver, gate, etc is 
 ```
 
 **Note:** Images are stored are stored in the database (Base64 encoding) along with other properties.
-This gives some advantage if you want to have a single backup of all data but it can be impact in performant dependinng on  context.
+This gives some advantage if you want to have a single backup of all data but it can be impact in performant dependinng on context.
 Eventually fields can be used to  store path while images are saved in disk, buck, etc.
 
 
@@ -137,3 +137,11 @@ Eventually fields can be used to  store path while images are saved in disk, buc
   }
 }
 ```
+
+## Pending
+* Comple AMQP integration (RabbitMQ) queues
+  * App can now subscribe to a queue, redirect command and payload to controller but the latter does not start processing them.
+  * Basic controller to send commands to the outboud queue (message to warehouse)
+  * Make queue parameters configurable (mix / envars)
+  * Add more tests
+  * Docs

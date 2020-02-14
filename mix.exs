@@ -48,7 +48,8 @@ defmodule Ledger.MixProject do
       {:poison, "~> 3.1"},
       {:exconstructor, "~> 1.1"},
       {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
-      {:ex_machina, "~> 2.3", only: :test}
+      {:ex_machina, "~> 2.3", only: :test},
+      {:amqp, "~> 1.4.0"}
     ]
   end
 
