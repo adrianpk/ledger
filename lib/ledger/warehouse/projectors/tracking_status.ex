@@ -9,7 +9,7 @@ defmodule Ledger.Warehouse.Projectors.TrackingStatus do
     ClassifiedItem,
     RelocatedInStore,
     RequestedShipping,
-    DispatchedForShipping,
+    DispatchedForShipping
   }
 
   alias Ledger.Warehouse.Projections.TrackingStatus

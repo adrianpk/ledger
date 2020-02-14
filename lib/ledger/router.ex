@@ -18,7 +18,7 @@ defmodule Ledger.Router do
       ClassifyItem,
       RelocateInStore,
       RequestShipping,
-      DispatchForShipping,
+      DispatchForShipping
     ],
     to: Tracking,
     identity: :tracking_uuid,

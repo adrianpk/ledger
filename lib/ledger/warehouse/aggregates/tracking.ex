@@ -280,7 +280,6 @@ defmodule Ledger.Warehouse.Aggregates.Tracking do
     }
   end
 
-
   def apply(
         %Tracking{uuid: tracking_uuid} = tracking,
         %RequestedShipping{tracking_uuid: tracking_uuid} = event

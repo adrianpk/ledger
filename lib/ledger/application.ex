@@ -17,6 +17,8 @@ defmodule Ledger.Application do
   # end
 
   def start(_type, _args) do
+    import Supervisor.Spec
+
     # List all child processes to be supervised
     children = [
       Ledger.App,
@@ -27,7 +29,9 @@ defmodule Ledger.Application do
       # Starts a worker by calling: Ledger.Worker.start_link(arg)
       # {Ledger.Worker, arg},
       # Warehouse supervisor
-      Ledger.Warehouse.Supervisor
+      Ledger.Warehouse.Supervisor,
+      # Queue
+      worker(Ledger.Queue.Worker, []),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
