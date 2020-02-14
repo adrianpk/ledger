@@ -7,5 +7,7 @@ defmodule LedgerWeb.Router do
 
   scope "/api", LedgerWeb do
     pipe_through :api
+
+    post "/send", QueueController, :index
   end
 end

@@ -2,15 +2,15 @@
 
 test-selected:
 	clear
-	@make spacer
-	make -f makefile.test test-receive-from-transport
-	@make spacer
-	make -f makefile.test test-classify-item
-	@make spacer
-	make -f makefile.test test-classify-item
-	@make spacer
-	make -f makefile.test test-request-shipping
-	@make spacer
+	#@make spacer
+	#make -f makefile.test test-receive-from-transport
+	#@make spacer
+	#make -f makefile.test test-classify-item
+	#@make spacer
+	#make -f makefile.test test-classify-item
+	#@make spacer
+	#make -f makefile.test test-request-shipping
+	#@make spacer
 	make -f makefile.test test-dispatch-for-shipping
 
 ## Warehouse
