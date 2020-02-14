@@ -8,6 +8,45 @@ UUIDs can be easily generated offline and be unique across applications. However
 
 At the moment I asume that the loading process of vehicle, driver, gate, etc is automated through fixed credentials, sensor or terminal signatures (NFC, QR codes, biometric data, etc.)
 
+This is a proof of concept, in a real world implementation there would probably be additional commands that would allow users to request subsequent chain actions. i.e.: 'relocate-in-storage' action would be preceded by a 'request-relocation-in-storage' by way of ensuring any preparations at origin and destination as well as to send the necessary notifications.
+
+Remember also that the authorization and authentication aspects are beyond the scope of this implementation.
+
+## Routes
+
+| Method | Path      | Controller                | Function |
+|--------|-----------|---------------------------|----------|
+| POST   | /api/send | LedgerWeb.QueueController | :send    |
+
+
+## Dev setup
+
+### Start RabbitMQ
+
+**If docker image was not download before**
+
+```shell
+$ make rabbitmq-start
+```
+
+** if it was launched before**
+
+```shell
+$ make rabbitmq-restart
+```
+
+**Start the app**
+
+```shell
+$ make run
+```
+
+**Send a sample message to warehouse**
+
+```shell
+$ make send-receive-from-transport
+```
+
 ### Warehouse ᐅ Cloud
 
 **ReceiveFromTransport**
