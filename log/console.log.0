@@ -1,0 +1,254 @@
+2020-02-14 01:15:59.397 [info] <0.43.0> Application lager started on node nonode@nohost
+2020-02-14 01:15:59.404 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2020-02-14 01:15:59.418 [info] <0.43.0> Application sasl started on node nonode@nohost
+2020-02-14 01:15:59.421 [info] <0.43.0> Application tools started on node nonode@nohost
+2020-02-14 01:15:59.422 [info] <0.43.0> Application jsx started on node nonode@nohost
+2020-02-14 01:15:59.427 [info] <0.43.0> Application ranch started on node nonode@nohost
+2020-02-14 01:15:59.429 [info] <0.43.0> Application recon started on node nonode@nohost
+2020-02-14 01:15:59.447 [info] <0.43.0> Application credentials_obfuscation started on node nonode@nohost
+2020-02-14 01:15:59.447 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2020-02-14 01:15:59.454 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2020-02-14 01:15:59.456 [info] <0.43.0> Application amqp started on node nonode@nohost
+2020-02-14 01:15:59.457 [info] <0.43.0> Application commanded_ecto_projections started on node nonode@nohost
+2020-02-14 01:15:59.459 [info] <0.43.0> Application ex_machina started on node nonode@nohost
+2020-02-14 01:15:59.460 [info] <0.43.0> Application commanded_eventstore_adapter started on node nonode@nohost
+2020-02-14 01:15:59.463 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2020-02-14 01:15:59.466 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2020-02-14 01:15:59.467 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2020-02-14 01:15:59.469 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2020-02-14 01:15:59.537 [info] <0.43.0> Application ledger started on node nonode@nohost
+2020-02-14 01:15:59.560 [info] <0.43.0> Application ex_unit started on node nonode@nohost
+2020-02-14 01:15:59.726 [error] <0.718.0>@Elixir.DBConnection.ConnectionPool:handle_info:34 gen_server <0.718.0> terminated with reason: no function clause matching 'Elixir.DBConnection.ConnectionPool':handle_info({'DOWN',#Ref<0.2171341305.4082368520.114050>,process,<0.721.0>,shutdown}, {ready,#Ref<0.2171341305.4082499592.114020>,#{delay => 0,idle => #Ref<0.2171341305.4082368519.114029>,...}}) line 34
+2020-02-14 01:37:40.165 [info] <0.43.0> Application lager started on node nonode@nohost
+2020-02-14 01:37:40.171 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2020-02-14 01:37:40.184 [info] <0.43.0> Application sasl started on node nonode@nohost
+2020-02-14 01:37:40.187 [info] <0.43.0> Application tools started on node nonode@nohost
+2020-02-14 01:37:40.189 [info] <0.43.0> Application jsx started on node nonode@nohost
+2020-02-14 01:37:40.194 [info] <0.43.0> Application ranch started on node nonode@nohost
+2020-02-14 01:37:40.195 [info] <0.43.0> Application recon started on node nonode@nohost
+2020-02-14 01:37:40.212 [info] <0.43.0> Application credentials_obfuscation started on node nonode@nohost
+2020-02-14 01:37:40.212 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2020-02-14 01:37:40.217 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2020-02-14 01:37:40.220 [info] <0.43.0> Application amqp started on node nonode@nohost
+2020-02-14 01:37:40.225 [info] <0.43.0> Application ecto started on node nonode@nohost
+2020-02-14 01:37:40.226 [info] <0.43.0> Application ecto_sql started on node nonode@nohost
+2020-02-14 01:37:40.226 [info] <0.43.0> Application commanded_ecto_projections started on node nonode@nohost
+2020-02-14 01:37:40.227 [info] <0.43.0> Application commanded_eventstore_adapter started on node nonode@nohost
+2020-02-14 01:37:40.230 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2020-02-14 01:37:40.233 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2020-02-14 01:37:40.235 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2020-02-14 01:37:40.236 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2020-02-14 01:37:40.366 [info] <0.43.0> Application ledger started on node nonode@nohost
+2020-02-14 01:49:30.444 [info] <0.43.0> Application lager started on node nonode@nohost
+2020-02-14 01:49:30.447 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2020-02-14 01:49:30.459 [info] <0.43.0> Application sasl started on node nonode@nohost
+2020-02-14 01:49:30.462 [info] <0.43.0> Application tools started on node nonode@nohost
+2020-02-14 01:49:30.464 [info] <0.43.0> Application jsx started on node nonode@nohost
+2020-02-14 01:49:30.470 [info] <0.43.0> Application ranch started on node nonode@nohost
+2020-02-14 01:49:30.471 [info] <0.43.0> Application recon started on node nonode@nohost
+2020-02-14 01:49:30.489 [info] <0.43.0> Application credentials_obfuscation started on node nonode@nohost
+2020-02-14 01:49:30.489 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2020-02-14 01:49:30.495 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2020-02-14 01:49:30.497 [info] <0.43.0> Application amqp started on node nonode@nohost
+2020-02-14 01:49:30.503 [info] <0.43.0> Application ecto started on node nonode@nohost
+2020-02-14 01:49:30.504 [info] <0.43.0> Application ecto_sql started on node nonode@nohost
+2020-02-14 01:49:30.505 [info] <0.43.0> Application commanded_ecto_projections started on node nonode@nohost
+2020-02-14 01:49:30.505 [info] <0.43.0> Application commanded_eventstore_adapter started on node nonode@nohost
+2020-02-14 01:49:30.509 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2020-02-14 01:49:30.512 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2020-02-14 01:49:30.513 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2020-02-14 01:49:30.516 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2020-02-14 01:49:30.671 [info] <0.43.0> Application ledger started on node nonode@nohost
+2020-02-14 01:49:43.180 [error] <0.601.0> CRASH REPORT Process <0.601.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:49:43.180 [error] <0.602.0> CRASH REPORT Process <0.602.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:49:43.184 [error] <0.601.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.600.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:49:43.184 [error] <0.602.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.599.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:49:43.211 [error] <0.606.0> CRASH REPORT Process <0.606.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:49:43.211 [error] <0.606.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.605.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:49:43.212 [error] <0.607.0> CRASH REPORT Process <0.607.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:49:43.213 [error] <0.607.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.604.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:29.994 [error] <0.612.0> CRASH REPORT Process <0.612.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:29.995 [error] <0.612.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.609.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:29.996 [error] <0.611.0> CRASH REPORT Process <0.611.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:29.997 [error] <0.611.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.610.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:30.118 [error] <0.617.0> CRASH REPORT Process <0.617.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:30.119 [error] <0.617.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.616.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:30.119 [error] <0.618.0> CRASH REPORT Process <0.618.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:30.119 [error] <0.618.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.615.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:33.427 [error] <0.621.0> CRASH REPORT Process <0.621.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:33.427 [error] <0.621.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.620.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:33.432 [error] <0.624.0> CRASH REPORT Process <0.624.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:33.432 [error] <0.624.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.623.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:33.554 [error] <0.629.0> CRASH REPORT Process <0.629.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:33.554 [error] <0.629.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.627.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:33.555 [error] <0.628.0> CRASH REPORT Process <0.628.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:33.556 [error] <0.628.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.626.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:37.572 [error] <0.646.0> CRASH REPORT Process <0.646.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:37.572 [error] <0.646.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.645.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:37.573 [error] <0.647.0> CRASH REPORT Process <0.647.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:37.574 [error] <0.647.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.644.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:37.709 [error] <0.651.0> CRASH REPORT Process <0.651.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:37.709 [error] <0.651.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.649.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:37.715 [error] <0.652.0> CRASH REPORT Process <0.652.0> with 0 neighbours exited with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87 in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:51:37.715 [error] <0.652.0> Cowboy stream 1 with ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' and connection process <0.650.0> had its request process exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.UndefinedFunctionError',arity => 1,function => publish,message => nil,module => 'Elixir.Ledger.Worker',reason => nil},[{'Elixir.Ledger.Worker',publish,[<<"{\"user_id\":\"xyz\",\"event\":\"sent_a_message\"}">>],[]},{'Elixir.LedgerWeb.QueueController',index,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,6}]},{'Elixir.LedgerWeb.QueueController',action,2,[{file,"lib/ledger_web/controllers/queue_controller.ex"},{line,1}]},{'Elixir.LedgerWeb.QueueController',...},...]},...} in 'Elixir.Phoenix.Endpoint.Cowboy2Handler':exit_on_error/4 line 87
+2020-02-14 01:55:33.925 [info] <0.43.0> Application lager started on node nonode@nohost
+2020-02-14 01:55:33.929 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2020-02-14 01:55:33.938 [info] <0.43.0> Application sasl started on node nonode@nohost
+2020-02-14 01:55:33.940 [info] <0.43.0> Application tools started on node nonode@nohost
+2020-02-14 01:55:33.941 [info] <0.43.0> Application jsx started on node nonode@nohost
+2020-02-14 01:55:33.945 [info] <0.43.0> Application ranch started on node nonode@nohost
+2020-02-14 01:55:33.947 [info] <0.43.0> Application recon started on node nonode@nohost
+2020-02-14 01:55:33.961 [info] <0.43.0> Application credentials_obfuscation started on node nonode@nohost
+2020-02-14 01:55:33.961 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2020-02-14 01:55:33.967 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2020-02-14 01:55:33.969 [info] <0.43.0> Application amqp started on node nonode@nohost
+2020-02-14 01:55:33.972 [info] <0.43.0> Application ecto started on node nonode@nohost
+2020-02-14 01:55:33.973 [info] <0.43.0> Application ecto_sql started on node nonode@nohost
+2020-02-14 01:55:33.974 [info] <0.43.0> Application commanded_ecto_projections started on node nonode@nohost
+2020-02-14 01:55:33.975 [info] <0.43.0> Application commanded_eventstore_adapter started on node nonode@nohost
+2020-02-14 01:55:33.977 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2020-02-14 01:55:33.980 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2020-02-14 01:55:33.981 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2020-02-14 01:55:33.982 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2020-02-14 01:55:34.114 [error] <0.492.0> Failed to start Ranch listener 'Elixir.LedgerWeb.Endpoint.HTTP' in ranch_tcp:listen([{cacerts,'...'},{key,'...'},{cert,'...'},{port,4000}]) for reason eaddrinuse (address already in use)
+2020-02-14 01:55:34.116 [error] <0.492.0> CRASH REPORT Process <0.492.0> with 0 neighbours exited with reason: {listen_error,'Elixir.LedgerWeb.Endpoint.HTTP',eaddrinuse} in ranch_acceptors_sup:listen_error/5 line 66
+2020-02-14 01:55:45.098 [info] <0.43.0> Application lager started on node nonode@nohost
+2020-02-14 01:55:45.101 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2020-02-14 01:55:45.110 [info] <0.43.0> Application sasl started on node nonode@nohost
+2020-02-14 01:55:45.113 [info] <0.43.0> Application tools started on node nonode@nohost
+2020-02-14 01:55:45.114 [info] <0.43.0> Application jsx started on node nonode@nohost
+2020-02-14 01:55:45.118 [info] <0.43.0> Application ranch started on node nonode@nohost
+2020-02-14 01:55:45.120 [info] <0.43.0> Application recon started on node nonode@nohost
+2020-02-14 01:55:45.136 [info] <0.43.0> Application credentials_obfuscation started on node nonode@nohost
+2020-02-14 01:55:45.136 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2020-02-14 01:55:45.142 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2020-02-14 01:55:45.143 [info] <0.43.0> Application amqp started on node nonode@nohost
+2020-02-14 01:55:45.147 [info] <0.43.0> Application ecto started on node nonode@nohost
+2020-02-14 01:55:45.148 [info] <0.43.0> Application ecto_sql started on node nonode@nohost
+2020-02-14 01:55:45.149 [info] <0.43.0> Application commanded_ecto_projections started on node nonode@nohost
+2020-02-14 01:55:45.149 [info] <0.43.0> Application commanded_eventstore_adapter started on node nonode@nohost
+2020-02-14 01:55:45.152 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2020-02-14 01:55:45.154 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2020-02-14 01:55:45.156 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2020-02-14 01:55:45.157 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2020-02-14 01:55:45.305 [error] <0.381.0> Supervisor 'Elixir.Ledger.Supervisor' had child 'Elixir.Ledger.Queue.Worker' started with 'Elixir.Ledger.Queue.Worker':start_link([]) at undefined exit with reason {'EXIT',{undef,[{'Elixir.Ledger.Queue.Worker',start_link,[[]],[]},{supervisor,do_start_child_i,3,[{file,"supervisor.erl"},{line,379}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,365}]},{supervisor,'-start_children/2-fun-0-',3,[{file,"supervisor.erl"},{line,349}]},{supervisor,children_map,4,[{file,"supervisor.erl"},{line,1157}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,315}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[...]},...]}} in context start_error
+2020-02-14 01:56:37.542 [info] <0.43.0> Application lager started on node nonode@nohost
+2020-02-14 01:56:37.547 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2020-02-14 01:56:37.557 [info] <0.43.0> Application sasl started on node nonode@nohost
+2020-02-14 01:56:37.559 [info] <0.43.0> Application tools started on node nonode@nohost
+2020-02-14 01:56:37.561 [info] <0.43.0> Application jsx started on node nonode@nohost
+2020-02-14 01:56:37.566 [info] <0.43.0> Application ranch started on node nonode@nohost
+2020-02-14 01:56:37.567 [info] <0.43.0> Application recon started on node nonode@nohost
+2020-02-14 01:56:37.583 [info] <0.43.0> Application credentials_obfuscation started on node nonode@nohost
+2020-02-14 01:56:37.583 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2020-02-14 01:56:37.589 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2020-02-14 01:56:37.591 [info] <0.43.0> Application amqp started on node nonode@nohost
+2020-02-14 01:56:37.595 [info] <0.43.0> Application ecto started on node nonode@nohost
+2020-02-14 01:56:37.596 [info] <0.43.0> Application ecto_sql started on node nonode@nohost
+2020-02-14 01:56:37.597 [info] <0.43.0> Application commanded_ecto_projections started on node nonode@nohost
+2020-02-14 01:56:37.597 [info] <0.43.0> Application commanded_eventstore_adapter started on node nonode@nohost
+2020-02-14 01:56:37.601 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2020-02-14 01:56:37.603 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2020-02-14 01:56:37.605 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2020-02-14 01:56:37.606 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2020-02-14 01:56:37.750 [error] <0.381.0> Supervisor 'Elixir.Ledger.Supervisor' had child 'Elixir.Ledger.Queue.Worker' started with 'Elixir.Ledger.Queue.Worker':start_link([]) at undefined exit with reason {'EXIT',{undef,[{'Elixir.Ledger.Queue.Worker',start_link,[[]],[]},{supervisor,do_start_child_i,3,[{file,"supervisor.erl"},{line,379}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,365}]},{supervisor,'-start_children/2-fun-0-',3,[{file,"supervisor.erl"},{line,349}]},{supervisor,children_map,4,[{file,"supervisor.erl"},{line,1157}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,315}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[...]},...]}} in context start_error
+2020-02-14 01:57:15.091 [info] <0.43.0> Application lager started on node nonode@nohost
+2020-02-14 01:57:15.094 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2020-02-14 01:57:15.103 [info] <0.43.0> Application sasl started on node nonode@nohost
+2020-02-14 01:57:15.106 [info] <0.43.0> Application tools started on node nonode@nohost
+2020-02-14 01:57:15.107 [info] <0.43.0> Application jsx started on node nonode@nohost
+2020-02-14 01:57:15.112 [info] <0.43.0> Application ranch started on node nonode@nohost
+2020-02-14 01:57:15.113 [info] <0.43.0> Application recon started on node nonode@nohost
+2020-02-14 01:57:15.128 [info] <0.43.0> Application credentials_obfuscation started on node nonode@nohost
+2020-02-14 01:57:15.128 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2020-02-14 01:57:15.133 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2020-02-14 01:57:15.135 [info] <0.43.0> Application amqp started on node nonode@nohost
+2020-02-14 01:57:15.139 [info] <0.43.0> Application ecto started on node nonode@nohost
+2020-02-14 01:57:15.140 [info] <0.43.0> Application ecto_sql started on node nonode@nohost
+2020-02-14 01:57:15.140 [info] <0.43.0> Application commanded_ecto_projections started on node nonode@nohost
+2020-02-14 01:57:15.141 [info] <0.43.0> Application commanded_eventstore_adapter started on node nonode@nohost
+2020-02-14 01:57:15.144 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2020-02-14 01:57:15.146 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2020-02-14 01:57:15.147 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2020-02-14 01:57:15.149 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2020-02-14 01:57:15.297 [error] <0.381.0> Supervisor 'Elixir.Ledger.Supervisor' had child 'Elixir.Ledger.Queue.Worker' started with 'Elixir.Ledger.Queue.Worker':start_link([]) at undefined exit with reason {'EXIT',{undef,[{'Elixir.Ledger.Queue.Worker',start_link,[[]],[]},{supervisor,do_start_child_i,3,[{file,"supervisor.erl"},{line,379}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,365}]},{supervisor,'-start_children/2-fun-0-',3,[{file,"supervisor.erl"},{line,349}]},{supervisor,children_map,4,[{file,"supervisor.erl"},{line,1157}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,315}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[...]},...]}} in context start_error
+2020-02-14 02:01:42.790 [info] <0.43.0> Application lager started on node nonode@nohost
+2020-02-14 02:01:42.795 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2020-02-14 02:01:42.804 [info] <0.43.0> Application sasl started on node nonode@nohost
+2020-02-14 02:01:42.807 [info] <0.43.0> Application tools started on node nonode@nohost
+2020-02-14 02:01:42.808 [info] <0.43.0> Application jsx started on node nonode@nohost
+2020-02-14 02:01:42.812 [info] <0.43.0> Application ranch started on node nonode@nohost
+2020-02-14 02:01:42.814 [info] <0.43.0> Application recon started on node nonode@nohost
+2020-02-14 02:01:42.828 [info] <0.43.0> Application credentials_obfuscation started on node nonode@nohost
+2020-02-14 02:01:42.829 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2020-02-14 02:01:42.834 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2020-02-14 02:01:42.836 [info] <0.43.0> Application amqp started on node nonode@nohost
+2020-02-14 02:01:42.840 [info] <0.43.0> Application ecto started on node nonode@nohost
+2020-02-14 02:01:42.841 [info] <0.43.0> Application ecto_sql started on node nonode@nohost
+2020-02-14 02:01:42.842 [info] <0.43.0> Application commanded_ecto_projections started on node nonode@nohost
+2020-02-14 02:01:42.842 [info] <0.43.0> Application commanded_eventstore_adapter started on node nonode@nohost
+2020-02-14 02:01:42.845 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2020-02-14 02:01:42.847 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2020-02-14 02:01:42.848 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2020-02-14 02:01:42.849 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2020-02-14 02:01:43.000 [error] <0.381.0> Supervisor 'Elixir.Ledger.Supervisor' had child 'Elixir.Ledger.Queue.Worker' started with 'Elixir.Ledger.Queue.Worker':start_link([]) at undefined exit with reason {'EXIT',{undef,[{'Elixir.Ledger.Queue.Worker',start_link,[[]],[]},{supervisor,do_start_child_i,3,[{file,"supervisor.erl"},{line,379}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,365}]},{supervisor,'-start_children/2-fun-0-',3,[{file,"supervisor.erl"},{line,349}]},{supervisor,children_map,4,[{file,"supervisor.erl"},{line,1157}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,315}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[...]},...]}} in context start_error
+2020-02-14 02:06:30.724 [info] <0.43.0> Application lager started on node nonode@nohost
+2020-02-14 02:06:30.729 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2020-02-14 02:06:30.741 [info] <0.43.0> Application sasl started on node nonode@nohost
+2020-02-14 02:06:30.744 [info] <0.43.0> Application tools started on node nonode@nohost
+2020-02-14 02:06:30.746 [info] <0.43.0> Application jsx started on node nonode@nohost
+2020-02-14 02:06:30.750 [info] <0.43.0> Application ranch started on node nonode@nohost
+2020-02-14 02:06:30.751 [info] <0.43.0> Application recon started on node nonode@nohost
+2020-02-14 02:06:30.766 [info] <0.43.0> Application credentials_obfuscation started on node nonode@nohost
+2020-02-14 02:06:30.766 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2020-02-14 02:06:30.772 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2020-02-14 02:06:30.774 [info] <0.43.0> Application amqp started on node nonode@nohost
+2020-02-14 02:06:30.778 [info] <0.43.0> Application ecto started on node nonode@nohost
+2020-02-14 02:06:30.779 [info] <0.43.0> Application ecto_sql started on node nonode@nohost
+2020-02-14 02:06:30.780 [info] <0.43.0> Application commanded_ecto_projections started on node nonode@nohost
+2020-02-14 02:06:30.781 [info] <0.43.0> Application commanded_eventstore_adapter started on node nonode@nohost
+2020-02-14 02:06:30.784 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2020-02-14 02:06:30.787 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2020-02-14 02:06:30.788 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2020-02-14 02:06:30.790 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2020-02-14 02:06:30.980 [error] <0.390.0>@Elixir.Ledger.Queue.Worker:init:21 Supervisor 'Elixir.Ledger.Supervisor' had child 'Elixir.Ledger.Queue.Worker' started with 'Elixir.Ledger.Queue.Worker':start_link() at undefined exit with reason no match of right hand value {error,econnrefused} in 'Elixir.Ledger.Queue.Worker':init/1 line 21 in context start_error
+2020-02-14 02:28:31.261 [info] <0.43.0> Application lager started on node nonode@nohost
+2020-02-14 02:28:31.266 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2020-02-14 02:28:31.275 [info] <0.43.0> Application sasl started on node nonode@nohost
+2020-02-14 02:28:31.277 [info] <0.43.0> Application tools started on node nonode@nohost
+2020-02-14 02:28:31.279 [info] <0.43.0> Application jsx started on node nonode@nohost
+2020-02-14 02:28:31.283 [info] <0.43.0> Application ranch started on node nonode@nohost
+2020-02-14 02:28:31.284 [info] <0.43.0> Application recon started on node nonode@nohost
+2020-02-14 02:28:31.300 [info] <0.43.0> Application credentials_obfuscation started on node nonode@nohost
+2020-02-14 02:28:31.301 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2020-02-14 02:28:31.306 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2020-02-14 02:28:31.308 [info] <0.43.0> Application amqp started on node nonode@nohost
+2020-02-14 02:28:31.312 [info] <0.43.0> Application ecto started on node nonode@nohost
+2020-02-14 02:28:31.313 [info] <0.43.0> Application ecto_sql started on node nonode@nohost
+2020-02-14 02:28:31.314 [info] <0.43.0> Application commanded_ecto_projections started on node nonode@nohost
+2020-02-14 02:28:31.314 [info] <0.43.0> Application commanded_eventstore_adapter started on node nonode@nohost
+2020-02-14 02:28:31.318 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2020-02-14 02:28:31.321 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2020-02-14 02:28:31.322 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2020-02-14 02:28:31.323 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2020-02-14 02:28:31.547 [info] <0.43.0> Application ledger started on node nonode@nohost
+2020-02-14 19:52:17.184 [info] <0.43.0> Application lager started on node nonode@nohost
+2020-02-14 19:52:17.190 [info] <0.43.0> Application xmerl started on node nonode@nohost
+2020-02-14 19:52:17.202 [info] <0.43.0> Application sasl started on node nonode@nohost
+2020-02-14 19:52:17.206 [info] <0.43.0> Application tools started on node nonode@nohost
+2020-02-14 19:52:17.208 [info] <0.43.0> Application jsx started on node nonode@nohost
+2020-02-14 19:52:17.213 [info] <0.43.0> Application ranch started on node nonode@nohost
+2020-02-14 19:52:17.215 [info] <0.43.0> Application recon started on node nonode@nohost
+2020-02-14 19:52:17.235 [info] <0.43.0> Application credentials_obfuscation started on node nonode@nohost
+2020-02-14 19:52:17.235 [info] <0.43.0> Application rabbit_common started on node nonode@nohost
+2020-02-14 19:52:17.242 [info] <0.43.0> Application amqp_client started on node nonode@nohost
+2020-02-14 19:52:17.244 [info] <0.43.0> Application amqp started on node nonode@nohost
+2020-02-14 19:52:17.248 [info] <0.43.0> Application ecto started on node nonode@nohost
+2020-02-14 19:52:17.249 [info] <0.43.0> Application ecto_sql started on node nonode@nohost
+2020-02-14 19:52:17.249 [info] <0.43.0> Application commanded_ecto_projections started on node nonode@nohost
+2020-02-14 19:52:17.250 [info] <0.43.0> Application commanded_eventstore_adapter started on node nonode@nohost
+2020-02-14 19:52:17.253 [info] <0.43.0> Application cowlib started on node nonode@nohost
+2020-02-14 19:52:17.256 [info] <0.43.0> Application cowboy started on node nonode@nohost
+2020-02-14 19:52:17.257 [info] <0.43.0> Application plug_cowboy started on node nonode@nohost
+2020-02-14 19:52:17.259 [info] <0.43.0> Application phoenix_ecto started on node nonode@nohost
+2020-02-14 19:52:17.490 [info] <0.43.0> Application ledger started on node nonode@nohost

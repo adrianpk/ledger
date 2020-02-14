@@ -18,6 +18,35 @@ Remember also that the authorization and authentication aspects are beyond the s
 |--------|-----------|---------------------------|----------|
 | POST   | /api/send | LedgerWeb.QueueController | :send    |
 
+
+## Dev setup
+
+### Start RabbitMQ
+
+**If docker image was not download before**
+
+```shell
+$ make rabbitmq-start
+```
+
+** if it was launched before**
+
+```shell
+$ make rabbitmq-restart
+```
+
+**Start the app**
+
+```shell
+$ make run
+```
+
+**Send a sample message to warehouse**
+
+```shell
+$ make send-receive-from-transport
+```
+
 ### Warehouse ᐅ Cloud
 
 **ReceiveFromTransport**
