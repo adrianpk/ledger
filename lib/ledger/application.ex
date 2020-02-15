@@ -31,9 +31,9 @@ defmodule Ledger.Application do
       # Warehouse supervisor
       Ledger.Warehouse.Supervisor,
       # Publisher
-      worker(Ledger.Queue.Worker, []),
+      worker(Ledger.Queue.Publisher, []),
       # Listener
-      worker(Ledger.Queue.Receiver, [])
+      worker(Ledger.Queue.Listener, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

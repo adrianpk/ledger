@@ -1,14 +1,14 @@
-defmodule Ledger.Queue.Receiver do
+defmodule Ledger.Queue.Listener do
   ## TODO: Make configurable using envar
   @channel "inbound"
   # No buffer: Messages are processed as they enter.
   @buffer_size 0
 
-  alias Ledger.Queue.Receiver
+  alias Ledger.Queue.Listener
   alias Ledger.Queue.Message
 
   def start_link do
-    Receiver.listen()
+    Listener.listen()
   end
 
   def listen do
@@ -25,6 +25,7 @@ defmodule Ledger.Queue.Receiver do
     Poison.decode!(msg, as: %Message{})
     {:ok, dec} = Poison.decode(msg, as: %Message{})
     IO.inspect(dec)
+    # TODO: Command pattern matching and dispatch
   end
 
   defp push(value) do
