@@ -1,7 +1,14 @@
 defmodule Ledger.Queue.Receiver do
   ## TODO: Make configurable using envar
   @channel "inbound"
-  @buffer_size 0 # No buffer: Messages are processed as they enter.
+  # No buffer: Messages are processed as they enter.
+  @buffer_size 0
+
+  alias Ledger.Queue.Receiver
+
+  def start_link do
+    Receiver.listen()
+  end
 
   def listen do
     {:ok, connection} = AMQP.Connection.open()
