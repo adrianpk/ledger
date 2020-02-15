@@ -19,7 +19,7 @@ Remember also that the authorization and authentication aspects are beyond the s
 ## Routes
 
 | Method | Path      | Controller                | Function |
-| ------ | --------- | ------------------------- | -------- |
+|--------|-----------|---------------------------|----------|
 | POST   | /api/send | LedgerWeb.QueueController | :send    |
 
 ## Dev setup
@@ -97,7 +97,7 @@ $ make send-receive-from-transport
 ```
 
 **Note:** Images are stored are stored in the database (Base64 encoding) along with other properties.
-This gives some advantage if you want to have a single backup of all data but it can be impact in performant dependinng on context.
+This gives some advantage if you want to have a single backup of all data but it can be impact in performant depending on context.
 Eventually fields can be used to store path while images are saved in disk, buck, etc.
 
 **RelocateInStore**
