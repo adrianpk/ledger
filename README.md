@@ -170,7 +170,6 @@ Eventually fields can be used to store path while images are saved in disk, buck
 ## Pending
 
 - Comple AMQP integration (RabbitMQ) queues
-  - Dispatch commands from queue listener
   - Make queue parameters configurable (mix / envars)
   - Validations?
   - Add more tests
