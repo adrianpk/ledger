@@ -1,5 +1,9 @@
 # Ledger
 
+## Project
+
+[Kanban](https://github.com/adrianpk/ledger/projects/1)
+
 ## Commands
 
 This is a proof of concept, UUIDs has been chosen as standard identifier to simplify the implementation
