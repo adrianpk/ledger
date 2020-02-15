@@ -1,4 +1,4 @@
-defmodule Ledger.Queue.Worker do
+defmodule Ledger.Queue.Publisher do
   use GenServer
 
   ## Client API
@@ -14,7 +14,6 @@ defmodule Ledger.Queue.Worker do
     IO.puts("Handling TX")
     GenServer.cast(:publisher, {:publish, message})
   end
-
 
   def receive(message) do
     IO.puts("Handling RX")
