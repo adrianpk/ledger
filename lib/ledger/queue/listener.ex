@@ -24,9 +24,6 @@ defmodule Ledger.Queue.Listener do
   end
 
   defp process_message(msg) do
-    # Dispatch using Ledger.Router
-    # Poison.decode!(msg, as: %Message{})
-    # {:ok, %{} = message} = Poison.decode(msg, as: %Message{})
     case Poison.decode(msg, as: %Message{}) do
       {:ok, %{} = msg} ->
         cmd =
@@ -35,8 +32,8 @@ defmodule Ledger.Queue.Listener do
 
         args = to_atom_keys(msg.arguments)
 
-        IO.inspect(cmd)
-        IO.inspect(args)
+        # IO.inspect(cmd)
+        # IO.inspect(args)
 
         apply(Warehouse, cmd, [args])
 
