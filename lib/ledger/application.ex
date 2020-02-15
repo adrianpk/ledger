@@ -30,8 +30,10 @@ defmodule Ledger.Application do
       # {Ledger.Worker, arg},
       # Warehouse supervisor
       Ledger.Warehouse.Supervisor,
-      # Queue
+      # Publisher
       worker(Ledger.Queue.Worker, []),
+      # Listener
+      worker(Ledger.Queue.Receiver, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
