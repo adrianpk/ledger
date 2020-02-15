@@ -1,4 +1,4 @@
-defmodule Ledger.Queue.Worker do
+defmodule Ledger.Queue.Publisher do
   use GenServer
 
   ## Client API
