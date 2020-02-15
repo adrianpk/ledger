@@ -5,6 +5,7 @@ defmodule Ledger.Queue.Receiver do
   @buffer_size 0
 
   alias Ledger.Queue.Receiver
+  alias Ledger.Queue.Message
 
   def start_link do
     Receiver.listen()
@@ -21,7 +22,9 @@ defmodule Ledger.Queue.Receiver do
 
   defp process_message(msg) do
     # Dispatch using Ledger.Router
-    IO.inspect(msg)
+    Poison.decode!(msg, as: %Message{})
+    {:ok, dec} = Poison.decode(msg, as: %Message{})
+    IO.inspect(dec)
   end
 
   defp push(value) do
