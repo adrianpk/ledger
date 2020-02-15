@@ -1,3 +1,3 @@
 defmodule Ledger.Queue.Message do
-  defstruct [command: "", arguments: %{}]
+  defstruct command: "", arguments: %{}
 end

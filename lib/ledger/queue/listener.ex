@@ -4,6 +4,9 @@ defmodule Ledger.Queue.Listener do
   # No buffer: Messages are processed as they enter.
   @buffer_size 0
 
+  require Logger
+
+  alias Ledger.Warehouse
   alias Ledger.Queue.Listener
   alias Ledger.Queue.Message
 
@@ -22,10 +25,36 @@ defmodule Ledger.Queue.Listener do
 
   defp process_message(msg) do
     # Dispatch using Ledger.Router
-    Poison.decode!(msg, as: %Message{})
-    {:ok, dec} = Poison.decode(msg, as: %Message{})
-    IO.inspect(dec)
-    # TODO: Command pattern matching and dispatch
+    # Poison.decode!(msg, as: %Message{})
+    # {:ok, %{} = message} = Poison.decode(msg, as: %Message{})
+    case Poison.decode(msg, as: %Message{}) do
+      {:ok, %{} = msg} ->
+        cmd =
+          Recase.to_snake(msg.command)
+          |> String.to_atom()
+
+        args = to_atom_keys(msg.arguments)
+
+        IO.inspect(cmd)
+        IO.inspect(args)
+
+        apply(Warehouse, cmd, [args])
+
+      {:error, reason} ->
+        Logger.error("Cannot decode message: " <> reason)
+    end
+  end
+
+  # TODO: compare string keys with values in a dictionary
+  # of allowed commands to avoid memory leaks
+  # Ref.: https://engineering.klarna.com/monitoring-erlang-atoms-c1d6a741328e
+  defp to_atom_keys(%{} = map) do
+    for {key, val} <- map, into: %{} do
+      cond do
+        is_atom(key) -> {key, val}
+        true -> {String.to_atom(key), val}
+      end
+    end
   end
 
   defp push(value) do
