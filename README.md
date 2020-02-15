@@ -29,7 +29,7 @@ Remember also that the authorization and authentication aspects are beyond the s
 $ make rabbitmq-start
 ```
 
-** if it was launched before**
+**if it was launched before**
 
 ```shell
 $ make rabbitmq-restart
@@ -53,9 +53,9 @@ $ make send-receive-from-transport
 
 ```json
 {
-  "payload": {
+  "data": {
     "command": "receive-from-transport",
-    "payload": {
+    "arguments": {
       "warehouse_uuid": "e682bb16-5738-46c6-abbd-33575b5379a0",
       "gate_uuid": "cb650975-0f77-47bd-ba86-44352bc1649a",
       "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
@@ -74,9 +74,9 @@ $ make send-receive-from-transport
 
 ```json
 {
-  "payload": {
+  "data": {
     "command": "classify-item",
-    "payload": {
+    "arguments": {
       "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
       "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
       "pallet_uuid": "7cdf9aa6-4816-41d2-9773-4894146fbec1",
@@ -106,9 +106,9 @@ Eventually fields can be used to  store path while images are saved in disk, buc
 
 ```json
 {
-  "payload": {
+  "data": {
     "command": "relocate-in-store",
-    "payload": {
+    "arguments": {
       "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
       "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
       "shelf_color": "green",
@@ -127,9 +127,9 @@ Eventually fields can be used to  store path while images are saved in disk, buc
 
 ```json
 {
-  "payload": {
+  "data": {
     "command": "dispatch-for-shipping",
-    "payload": {
+    "arguments": {
       "gate_uuid": "cb650975-0f77-47bd-ba86-44352bc1649a",
       "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
       "notes": "Sample note",
@@ -144,9 +144,9 @@ Eventually fields can be used to  store path while images are saved in disk, buc
 **Not implemented yet**
 ```json
 {
-  "payload": {
+  "data": {
     "command": "ship",
-    "payload": {
+    "arguments": {
       "vehicle_uuid": "9f1ba2b5-91a5-4907-8403-e94a1f8b1bd8",
       "driver_uuid": "2befab04-9971-4351-a8d4-14e62da96e80",
       "notes": "Sample note",
@@ -163,9 +163,9 @@ Eventually fields can be used to  store path while images are saved in disk, buc
 
 ```json
 {
-  "payload": {
+  "data": {
     "command": "request-shipment",
-    "payload": {
+    "arguments": {
       "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
       "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
       "addressee": "Mrs. Layla Prescott",
