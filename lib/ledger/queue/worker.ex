@@ -15,7 +15,6 @@ defmodule Ledger.Queue.Worker do
     GenServer.cast(:publisher, {:publish, message})
   end
 
-
   def receive(message) do
     IO.puts("Handling RX")
     GenServer.cast(:publisher, {:publish, message})
