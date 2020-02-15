@@ -1,5 +1,9 @@
 # Ledger
 
+## Project
+
+[Kanban](https://github.com/adrianpk/ledger/projects/1)
+
 ## Commands
 
 This is a proof of concept, UUIDs has been chosen as standard identifier to simplify the implementation
@@ -166,6 +170,7 @@ Eventually fields can be used to store path while images are saved in disk, buck
 ## Pending
 
 - Comple AMQP integration (RabbitMQ) queues
+  - Dispatch commands from queue listener
   - Make queue parameters configurable (mix / envars)
   - Validations?
   - Add more tests
