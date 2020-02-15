@@ -15,9 +15,8 @@ Remember also that the authorization and authentication aspects are beyond the s
 ## Routes
 
 | Method | Path      | Controller                | Function |
-|--------|-----------|---------------------------|----------|
+| ------ | --------- | ------------------------- | -------- |
 | POST   | /api/send | LedgerWeb.QueueController | :send    |
-
 
 ## Dev setup
 
@@ -53,19 +52,17 @@ $ make send-receive-from-transport
 
 ```json
 {
-  "data": {
-    "command": "receive-from-transport",
-    "arguments": {
-      "warehouse_uuid": "e682bb16-5738-46c6-abbd-33575b5379a0",
-      "gate_uuid": "cb650975-0f77-47bd-ba86-44352bc1649a",
-      "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
-      "vehicle_uuid": "9f1ba2b5-91a5-4907-8403-e94a1f8b1bd8",
-      "driver_uuid": "2befab04-9971-4351-a8d4-14e62da96e80",
-      "pallet_ext_id": "some-ext-code",
-      "package_ext_id": "some-ext-code",
-      "notes": "Sample note",
-      "tags": "tag1, tags2, tag3"
-    }
+  "command": "receive-from-transport",
+  "arguments": {
+    "warehouse_uuid": "e682bb16-5738-46c6-abbd-33575b5379a0",
+    "gate_uuid": "cb650975-0f77-47bd-ba86-44352bc1649a",
+    "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
+    "vehicle_uuid": "9f1ba2b5-91a5-4907-8403-e94a1f8b1bd8",
+    "driver_uuid": "2befab04-9971-4351-a8d4-14e62da96e80",
+    "pallet_ext_id": "some-ext-code",
+    "package_ext_id": "some-ext-code",
+    "notes": "Sample note",
+    "tags": "tag1, tags2, tag3"
   }
 }
 ```
@@ -74,51 +71,46 @@ $ make send-receive-from-transport
 
 ```json
 {
-  "data": {
-    "command": "classify-item",
-    "arguments": {
-      "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
-      "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
-      "pallet_uuid": "7cdf9aa6-4816-41d2-9773-4894146fbec1",
-      "package_uuid": "f577bfd3-b6f3-43da-8c1b-a24d97c2246d",
-      "length_cm": "50",
-      "width_cm": "80",
-      "height_cm": "40",
-      "weight_gm": "40",
-      "picture_front": "data:image/png;base64,iVBORw0KG...II=",
-      "picture_back": "data:image/png;base64,iVBORw0KG...II=",
-      "picture_left": "data:image/png;base64,iVBORw0KG...II=",
-      "picture_right": "data:image/png;base64,iVBORw0KG...II=",
-      "picture_top": "data:image/png;base64,iVBORw0KG...II=",
-      "notes": "Note updated",
-      "tags": "tag4, tag5, tag6"
-    }
+  "command": "classify-item",
+  "arguments": {
+    "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
+    "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
+    "pallet_uuid": "7cdf9aa6-4816-41d2-9773-4894146fbec1",
+    "package_uuid": "f577bfd3-b6f3-43da-8c1b-a24d97c2246d",
+    "length_cm": "50",
+    "width_cm": "80",
+    "height_cm": "40",
+    "weight_gm": "40",
+    "picture_front": "data:image/png;base64,iVBORw0KG...II=",
+    "picture_back": "data:image/png;base64,iVBORw0KG...II=",
+    "picture_left": "data:image/png;base64,iVBORw0KG...II=",
+    "picture_right": "data:image/png;base64,iVBORw0KG...II=",
+    "picture_top": "data:image/png;base64,iVBORw0KG...II=",
+    "notes": "Note updated",
+    "tags": "tag4, tag5, tag6"
   }
 }
 ```
 
 **Note:** Images are stored are stored in the database (Base64 encoding) along with other properties.
 This gives some advantage if you want to have a single backup of all data but it can be impact in performant dependinng on context.
-Eventually fields can be used to  store path while images are saved in disk, buck, etc.
-
+Eventually fields can be used to store path while images are saved in disk, buck, etc.
 
 **RelocateInStore**
 
 ```json
 {
-  "data": {
-    "command": "relocate-in-store",
-    "arguments": {
-      "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
-      "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
-      "shelf_color": "green",
-      "rack": "A",
-      "bay": "02",
-      "level": "E",
-      "position": "5",
-      "notes": "Note updated again",
-      "tags": "tag7, tags8, tag9"
-    }
+  "command": "relocate-in-store",
+  "arguments": {
+    "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
+    "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
+    "shelf_color": "green",
+    "rack": "A",
+    "bay": "02",
+    "level": "E",
+    "position": "5",
+    "notes": "Note updated again",
+    "tags": "tag7, tags8, tag9"
   }
 }
 ```
@@ -127,14 +119,12 @@ Eventually fields can be used to  store path while images are saved in disk, buc
 
 ```json
 {
-  "data": {
-    "command": "dispatch-for-shipping",
-    "arguments": {
-      "gate_uuid": "cb650975-0f77-47bd-ba86-44352bc1649a",
-      "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
-      "notes": "Sample note",
-      "tags": "tag1, tags2, tag3"
-    }
+  "command": "dispatch-for-shipping",
+  "arguments": {
+    "gate_uuid": "cb650975-0f77-47bd-ba86-44352bc1649a",
+    "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
+    "notes": "Sample note",
+    "tags": "tag1, tags2, tag3"
   }
 }
 ```
@@ -142,45 +132,40 @@ Eventually fields can be used to  store path while images are saved in disk, buc
 **Ship**
 
 **Not implemented yet**
+
 ```json
 {
-  "data": {
-    "command": "ship",
-    "arguments": {
-      "vehicle_uuid": "9f1ba2b5-91a5-4907-8403-e94a1f8b1bd8",
-      "driver_uuid": "2befab04-9971-4351-a8d4-14e62da96e80",
-      "notes": "Sample note",
-      "tags": "tag1, tags2, tag3"
-    }
+  "command": "ship",
+  "arguments": {
+    "vehicle_uuid": "9f1ba2b5-91a5-4907-8403-e94a1f8b1bd8",
+    "driver_uuid": "2befab04-9971-4351-a8d4-14e62da96e80",
+    "notes": "Sample note",
+    "tags": "tag1, tags2, tag3"
   }
 }
 ```
 
 ### Warehouse ᐅ Cloud
 
-
 **RequestShipment**
 
 ```json
 {
-  "data": {
-    "command": "request-shipment",
-    "arguments": {
-      "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
-      "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
-      "addressee": "Mrs. Layla Prescott",
-      "shipping_address": "Französisch Buchholz, 13125 Berlin, Germany",
-      "notes": "13:00 to 17:00 only",
-      "tags": "tag10"
-    }
+  "command": "request-shipment",
+  "arguments": {
+    "tracking_uuid": "e866596d-57bc-4e6c-9ce3-7e60fe18fbe4",
+    "operator_uuid": "d61b3b98-643e-4e80-a621-802f5cfb636b",
+    "addressee": "Mrs. Layla Prescott",
+    "shipping_address": "Französisch Buchholz, 13125 Berlin, Germany",
+    "notes": "13:00 to 17:00 only",
+    "tags": "tag10"
   }
 }
 ```
 
 ## Pending
-* Comple AMQP integration (RabbitMQ) queues
-  * App can now subscribe to a queue, redirect command and payload to controller but the latter does not start processing them.
-  * Basic controller to send commands to the outboud queue (message to warehouse)
-  * Make queue parameters configurable (mix / envars)
-  * Add more tests
-  * Docs
+
+- Comple AMQP integration (RabbitMQ) queues
+  - Make queue parameters configurable (mix / envars)
+  - Validations?
+  - Add more tests
