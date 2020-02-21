@@ -4,11 +4,11 @@
 
 [Kanban](https://github.com/adrianpk/ledger/projects/1)
 
-Event sourcing & CQRC in a proof of concept application based on Elixir, Phoenix, and RabbitMQ.
+[Event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) & [CQRC](https://martinfowler.com/bliki/CQRS.html) in a proof of concept application based on Elixir, Phoenix, and RabbitMQ.
 
 ## Notes
 
-This implementation does not pretend to be an example of a real world application. Its logic is simple, incomplete and probably not adjusted to a real use case. It is only a quick exercise just to see "how it feels" to implement a system based on event-sourcing and CQRS in a functional language like Elixir. I am also interested in test some Redis and RabbitMQ libs in order to contrast it with other implementations in imperative languages like Go.
+This implementation does not pretend to be an example of a real world application. Its logic is simple, incomplete and probably not adjusted to a real use case. It is only a quick exercise just to see "how it feels" to implement a system based on event-sourcing and CQRS in a functional language like Elixir. I am also interested in test RabbitMQ libs in order to contrast it with other implementations in imperative languages like Go.
 
 ## Commands
 
